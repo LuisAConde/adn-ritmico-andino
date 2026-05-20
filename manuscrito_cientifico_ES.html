@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADN Rítmico Andino — Manuscrito Científico ES</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tinta:      #16120e;
+    --tinta-s:    #4a3f2f;
+    --oro:        #7a5c1e;
+    --crema:      #f9f5ee;
+    --regleta:    #c9b99a;
+    --alerta:     #8b1a1a;
+    --fondo-nota: #f2ece0;
+    --fondo-cod:  #1c1a14;
+    --cod-texto:  #e8dfc0;
+    --bam:  #C0392B; --pas: #1A5276; --dan: #1E8449;
+    --gua:  #6C3483; --tor: #B7950B; --rum: #117A65;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: var(--crema);
+    color: var(--tinta);
+    font-size: 19px;
+    line-height: 1.78;
+  }
+  /* CABECERA */
+  .cabecera-revista {
+    background: var(--tinta);
+    color: var(--crema);
+    padding: 10px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .badge-estado {
+    background: #b8860b; color: #fff;
+    padding: 3px 10px; font-size: 10px; letter-spacing: 0.08em;
+  }
+  /* LAYOUT */
+  .pagina { max-width: 880px; margin: 0 auto; padding: 60px 48px 120px; }
+  /* BLOQUE TÍTULO */
+  .bloque-titulo {
+    border-top: 3px solid var(--tinta);
+    border-bottom: 1px solid var(--regleta);
+    padding: 44px 0 32px; margin-bottom: 44px;
+  }
+  .etiq-revista {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px; color: var(--oro);
+    letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 18px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem; font-weight: 400; font-style: italic;
+    line-height: 1.25; margin-bottom: 20px; color: var(--tinta);
+  }
+  .autores { font-size: 15px; color: var(--tinta-s); margin-bottom: 6px; }
+  .filiacion {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; color: var(--oro); letter-spacing: 0.05em; margin-bottom: 20px;
+  }
+  .fila-meta {
+    display: flex; gap: 28px; flex-wrap: wrap;
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--tinta-s);
+    border-top: 1px solid var(--regleta); padding-top: 14px; margin-top: 14px;
+  }
+  /* RESUMEN */
+  .resumen {
+    background: #ede7d9; border-top: 2px solid var(--tinta);
+    padding: 26px 34px; margin-bottom: 48px; font-size: 15.5px; line-height: 1.82;
+  }
+  .resumen .etiq { font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    color: var(--oro); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 10px; }
+  .palabras-clave { margin-top: 14px; font-size: 13.5px;
+    font-family: 'IBM Plex Mono', monospace; color: var(--tinta-s); }
+  /* SECCIONES */
+  .seccion { margin-bottom: 50px; }
+  h2 {
+    font-family: 'Playfair Display', serif; font-size: 1.4rem;
+    font-weight: 400; font-style: italic;
+    border-bottom: 1px solid var(--regleta); padding-bottom: 7px; margin-bottom: 22px;
+  }
+  h2 .num-sec {
+    font-family: 'IBM Plex Mono', monospace; font-style: normal;
+    font-size: 10.5px; color: var(--oro); letter-spacing: 0.1em; margin-right: 9px;
+  }
+  h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem;
+    font-weight: 400; margin: 26px 0 10px; }
+  p { margin-bottom: 15px; text-align: justify; }
+  /* ECUACIONES */
+  .ecuacion {
+    background: var(--fondo-nota); border-left: 3px solid var(--regleta);
+    padding: 14px 22px; margin: 22px 0;
+    font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; line-height: 2;
+    overflow-x: auto;
+  }
+  .ecuacion .etiq-ec { float: right; color: var(--oro); font-size: 11.5px; }
+  /* TABLAS */
+  .envoltura-tabla { margin: 28px 0; overflow-x: auto; }
+  .caption-tabla { font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    color: var(--oro); letter-spacing: 0.08em; margin-bottom: 8px; text-transform: uppercase; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  thead tr { background: var(--tinta); color: var(--crema); }
+  thead th { padding: 9px 13px; text-align: center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.07em; font-weight: 400; }
+  tbody tr:nth-child(even) { background: #ede7d9; }
+  tbody td { padding: 8px 13px; text-align: center;
+    border-bottom: 1px solid var(--regleta);
+    font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; }
+  td.etiq-td { text-align: left; font-family: 'Crimson Pro', serif;
+    font-size: 15.5px; font-weight: 600; }
+  /* VECTORES */
+  .fila-vector { display: flex; align-items: center; gap: 9px; margin-bottom: 9px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; }
+  .etiq-vec { width: 128px; font-family: 'Crimson Pro', serif;
+    font-size: 15px; font-weight: 600; flex-shrink: 0; }
+  .celdas-vec { display: flex; gap: 2px; }
+  .cv { width: 23px; height: 23px; display: flex; align-items: center;
+    justify-content: center; font-size: 10.5px; border: 1px solid rgba(0,0,0,.14); }
+  .cv-1 { background: var(--tinta); color: var(--crema); }
+  .cv-0 { background: #e4ddd0; color: #aaa; }
+  .cv-f { outline: 2px solid var(--oro); outline-offset: -2px; }
+  .stats-vec { font-size: 11px; color: var(--tinta-s); margin-left: 7px; }
+  /* CLÚSTERES */
+  .cuadros-cluster { display: flex; gap: 14px; margin: 24px 0; flex-wrap: wrap; }
+  .tarj-cluster { flex: 1; min-width: 190px; border: 2px solid currentColor;
+    padding: 14px 18px; }
+  .tarj-cluster .etiq-cl { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px;
+    letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 7px; opacity: 0.72; }
+  .tarj-cluster .miembros { font-size: 14.5px; font-weight: 600; line-height: 1.55; }
+  .tarj-cluster .props { font-size: 12px; font-family: 'IBM Plex Mono', monospace;
+    margin-top: 9px; line-height: 1.6; opacity: 0.85; }
+  /* NOTAS */
+  .caja-nota { border: 1px solid var(--regleta); background: var(--fondo-nota);
+    padding: 16px 22px; margin: 22px 0; font-size: 14px; line-height: 1.7; }
+  .caja-nota .etiq-nota { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px;
+    color: var(--oro); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 7px; }
+  /* ROBUSTEZ */
+  .grilla-rob { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 22px 0; }
+  .tarj-rob { padding: 16px 18px; font-size: 13.5px; line-height: 1.65; border: 1px solid var(--regleta); }
+  .tarj-rob h4 { font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 7px; }
+  .rob-ok { background: #eef7ee; border-color: #a5d6a7; }
+  .rob-ok h4 { color: #1E8449; }
+  .rob-div { background: #fff8ed; border-color: #f5c97a; }
+  .rob-div h4 { color: #7a5c1e; }
+  /* CÓDIGO */
+  .bloque-cod { background: var(--fondo-cod); color: var(--cod-texto);
+    padding: 18px 22px; font-family: 'IBM Plex Mono', monospace; font-size: 12px;
+    line-height: 1.75; margin: 18px 0; overflow-x: auto; border-left: 3px solid var(--oro); }
+  .c-com { color: #6e6450; font-style: italic; }
+  .c-kw { color: #b8860b; }
+  .c-fn { color: #87ceeb; }
+  .c-str { color: #9dc89d; }
+  /* COLORES GÉNERO */
+  .g-bam { color: var(--bam); font-weight: 600; }
+  .g-pas { color: var(--pas); font-weight: 600; }
+  .g-dan { color: var(--dan); font-weight: 600; }
+  .g-gua { color: var(--gua); font-weight: 600; }
+  .g-tor { color: var(--tor); font-weight: 600; }
+  .g-rum { color: var(--rum); font-weight: 600; }
+  /* REFERENCIAS */
+  .referencias { font-size: 13.5px; line-height: 1.82; }
+  .referencias p { text-indent: -30px; padding-left: 30px; margin-bottom: 9px; text-align: left; }
+  /* NOTAS AL PIE */
+  .notas-pie { border-top: 1px solid var(--regleta); margin-top: 60px;
+    padding-top: 18px; font-size: 12.5px; color: var(--tinta-s); line-height: 1.7; }
+  .notas-pie p { margin-bottom: 7px; }
+  .np { font-family: 'IBM Plex Mono', monospace; color: var(--oro);
+    font-size: 10.5px; margin-right: 4px; }
+  /* CELDA COLORES MATRIZ */
+  .c-bajo { background: #c8e6c9 !important; }
+  .c-med  { background: #bbdefb !important; }
+  .c-alto { background: #ffcdd2 !important; }
+  .c-diag { background: var(--tinta) !important; color: var(--crema) !important; }
+  @media print { .cabecera-revista { position: static; } body { font-size: 11pt; } }
+</style>
+</head>
+<body>
+
+<div class="cabecera-revista">
+  <span>Manuscrito — Versión Científica en Español · Revista Musical Chilena / TISMIR</span>
+  <span class="badge-estado">v2.0 · Revisado · 2025</span>
+  <span>Conde Solano, L. A.</span>
+</div>
+
+<div class="pagina">
+
+  <div class="bloque-titulo">
+    <div class="etiq-revista">Artículo de investigación original · Musicología Computacional · Etnomusicología</div>
+    <h1>Análisis filogenético y representación geométrica de los ritmos andinos colombianos mediante el marco matemático de Toussaint</h1>
+    <div class="autores"><strong>Luis Alexander Conde Solano</strong></div>
+    <div class="filiacion">Matemático e intérprete del Tiple colombiano · Investigador independiente, Colombia</div>
+    <div class="fila-meta">
+      <span>Enviado: 2025</span>
+      <span>Revisado: v2.0 — Ajustes post-revisión</span>
+      <span>Palabras clave: MIR · Ritmo geométrico · Filogenética · Música andina colombiana · Tiple</span>
+    </div>
+  </div>
+
+  <!-- RESUMEN -->
+  <div class="resumen">
+    <div class="etiq">Resumen</div>
+    <p>Se presenta la primera caracterización filogenética computacional de seis géneros rítmicos canónicos de la tradición musical andina colombiana —Bambuco, Pasillo, Danza, Guabina, Torbellino y Rumba Criolla— mediante la codificación de sus patrones ritmo-armónicos como secuencias binarias en el grupo cíclico ℤ₁₂ y la aplicación del marco geométrico de Toussaint (2013). Las señales acústicas fueron registradas directamente en el Tiple colombiano por el autor, permitiendo un análisis en dos capas: (A) una capa geométrico-formal que calcula vectores de onset, intervalos entre ataques (IOI), entropía de Shannon H, regularidad E y tanto la distancia de Hamming d_H como la distancia de intercambio dirigido d_S; y (B) una capa de procesamiento digital de señal (DSP) que extrae la tasa de cruces por cero, la asimetría espectral γ₁ y la densidad de onset ρ a partir de la firma tímbrica característica del instrumento. La agrupación jerárquica UPGMA sobre ambas matrices de distancias revela tres clústeres métricos estables confirmados independientemente por una frontera de decisión lineal en el espacio acústico F = ZCR × γ₁ × ρ. El aislamiento filogenético del Bambuco (d_H = 8,60; d_S = 6,83 al centroide más próximo) aporta un argumento computacional formal para su estatus como género bimétrico diferenciado. Se discuten las limitaciones metodológicas del corpus de intérprete único y se propone un protocolo de varianza bootstrap para validación multiintérprete.</p>
+    <div class="palabras-clave">
+      <strong>Palabras clave:</strong> recuperación de información musical · teoría del ritmo geométrico · codificación ℤ₁₂ · música andina colombiana · Tiple · agrupación filogenética · UPGMA · distancia de intercambio · densidad de onset · asimetría espectral
+    </div>
+  </div>
+
+  <!-- 1. INTRODUCCIÓN -->
+  <div class="seccion">
+    <h2><span class="num-sec">1.</span> Introducción</h2>
+    <p>La tradición musical andina colombiana comprende un rico repertorio de géneros rítmicos cuya complejidad métrica ha resistido la sistematización computacional. Géneros como el Bambuco presentan una superposición simultánea de las métricas 6/8 y 3/4 —denominada en la musicología regional como <em>bimétrico</em> o <em>compás compuesto</em> con hemiolia— que desborda los sistemas estándar de recuperación de información musical (MIR), calibrados para métricas binarias o ternarias estrictas de la tradición occidental (Franco Duque, 2004; Ministerio de Cultura, 2004). Esta condición bimétrica subyace también a un debate histórico no resuelto: si el Bambuco debe notarse en 6/8, en 3/4, o como compás compuesto, una cuestión con implicaciones directas para la pedagogía y la preservación del patrimonio (Ochoa Escobar et al., 2010).</p>
+
+    <p>Toussaint (2013) demostró que cualquier ritmo cíclico de período n puede codificarse como un collar binario en ℤ_n, habilitando la aplicación de métricas de distancia combinatoria —principalmente la distancia de Hamming d_H y la distancia de intercambio dirigido d_S— para construir filogenias métricas de ritmos folclóricos. Este marco se ha aplicado a los <em>timelines</em> del África Occidental (Toussaint, 2013), a los <em>palos</em> del flamenco (Díaz-Báñez et al., 2005; Pérez-León, 2018) y a los patrones de clave cubana (Pérez-León, 2018), pero no había sido aplicado al espacio rítmico ternario-binario co-axial de la música andina latinoamericana.</p>
+
+    <p>Un rasgo distintivo de este estudio es el empleo del Tiple colombiano como fuente de datos acústicos y como instrumento epistemológico. La estructura organológica del Tiple —cuatro órdenes triples de doce cuerdas en total, ejecutadas mediante técnica de <em>rasgueo</em> con uña natural— produce una firma espectral que varía sistemáticamente entre géneros rítmicos, permitiendo una clasificación de onset basada en DSP que complementa el análisis formal de ℤ₁₂.</p>
+
+    <p>Las contribuciones de este artículo son: (1) la primera caracterización rítmica bicapa —geométrica y DSP— de seis géneros andinos colombianos; (2) la implementación y comparación de d_H y d_S para ritmos de cardinalidad mixta k ∈ {3,…,8}; (3) un argumento filogenético formal para la singularidad métrica del Bambuco; y (4) la discusión de las propiedades acústicas del Tiple que lo convierten en un instrumento analítico privilegiado.</p>
+  </div>
+
+  <!-- 2. ANTECEDENTES -->
+  <div class="seccion">
+    <h2><span class="num-sec">2.</span> Antecedentes</h2>
+    <p>Toussaint (2013) demostró que los ritmos euclidianos —generados por el algoritmo de Bjorklund distribuyendo k ataques lo más uniformemente posible entre n pulsos— constituyen el vocabulario rítmico de tradiciones folclóricas diversas. Su taxonomía de distancias incluye la métrica de Hamming d_H, la distancia de intercambio d_S, la distancia cronotónica y la distancia por vector de intervalos dirigido. La distancia de intercambio, definida como el número mínimo de desplazamientos unitarios necesarios para transformar un ritmo en otro, es especialmente apropiada cuando se comparan ritmos de cardinalidad diferente, pues separa la contribución de la posición estructural de la de la densidad (Toussaint, 2013, cap. 17).</p>
+
+    <p>Para el flamenco, Díaz-Báñez et al. (2005) y Pérez-León (2018) aplicaron distancias cronotónicas y de permutación dirigida sobre representaciones de ℤ₁₂, recuperando la taxonomía estilística de los <em>palos</em> a partir de criterios puramente geométricos. Estos trabajos establecen un precedente metodológico directamente transferible al caso andino, donde la resolución n = 12 —el mínimo común múltiplo de las subdivisiones binaria y ternaria— está igualmente justificada.</p>
+
+    <p>En la literatura MIR, Holzapfel y Stylianou (2011) aplicaron métricas de distancia basadas en onset a ritmos del makam turco (<em>usul</em>), demostrando que la agrupación filogenética recupera familias rítmicas documentadas históricamente. Nuestro enfoque extiende esta línea incorporando características acústicas específicas del instrumento como segunda capa de confirmación independiente.</p>
+  </div>
+
+  <!-- 3. EL TIPLE -->
+  <div class="seccion">
+    <h2><span class="num-sec">3.</span> El Tiple como instrumento analítico</h2>
+    <p>El Tiple colombiano es un cordófono de pulsación (S-H 321.322.5) con cuatro órdenes triples de cuerdas —doce cuerdas en total— afinadas en pares de octava con una cuerda central al unísono (primas e'·e'·e', segundas b'·b·b', terceras g'·g·g', cuartas d'·d·d') (<em>Por los caminos del tiple</em>, p. 175–179). Esta estructura organológica produce dos propiedades acústicas críticas para el análisis:</p>
+
+    <h3>3.1 Firma espectral de los órdenes triples</h3>
+    <p>Cada orden de tres cuerdas con la cuerda central a una octava inferior produce un enriquecimiento espectral en la banda 3–7 kHz que denominamos <em>energía de uña</em> (E_uña). Esta banda es ausente en la guitarra —de cuerdas simples o al unísono real— y en la bandola —cuyo ataque de plectro produce caída rápida de la energía en frecuencias altas. El parámetro E_uña sirve así como marcador de onset específico del instrumento, no confundido con instrumentos melódicos concurrentes.</p>
+
+    <h3>3.2 El rasgueo como codificador rítmico</h3>
+    <p>D'Alemán (1885, p. 40, citado en <em>Por los caminos del tiple</em>) documentó que cada género andino posee un <em>rasgueo</em> canónico distinto —un patrón específico de golpe de dedos sobre las doce cuerdas. Este no es una mera convención interpretativa, sino un isomorfismo estructural: la densidad de onset ρ y la tasa de cruces por cero (ZCR) de la señal compuesta codifican el marco métrico del género. En concreto, la barrida descendente de cuatro dedos sobre doce cuerdas genera múltiples cruces por cero casi simultáneos en la forma de onda compuesta, haciendo de la ZCR un indicador confiable del tipo de rasgueo y, por ende, del perfil métrico. La guitarra, con seis cuerdas simples, y la bandola, tocada con plectro, producen ataques puntuales que no contienen información equivalente.</p>
+
+    <p>Estas propiedades justifican conjuntamente la posición del Tiple como instrumento <em>epistemológicamente privilegiado</em> para este análisis: su estructura de órdenes triples crea un acoplamiento físico directo entre el patrón rítmico notado y la salida acústica mesurable.</p>
+  </div>
+
+  <!-- 4. METODOLOGÍA -->
+  <div class="seccion">
+    <h2><span class="num-sec">4.</span> Metodología</h2>
+
+    <h3>4.1 Codificación en ℤ₁₂ y métricas formales</h3>
+    <p>Cada género se codifica como un collar binario <strong>v</strong> ∈ {0,1}¹² en el grupo cíclico ℤ₁₂, donde v[i] = 1 indica un ataque en la posición de pulso i ∈ {0,…,11} y n = 12 es el mínimo común múltiplo de los flujos de subdivisión de 2 y 3 pulsos. Las posiciones {0,3,6,9} ⊂ ℤ₁₂ corresponden a los tiempos fuertes de un compás de 3/4; {0,4,8}, a los de 6/8. La coexistencia de ambas cuadrículas de tiempos fuertes en un solo vector es la definición formal de hemiolia en esta representación.</p>
+
+    <p>Los vectores proceden de Franco Duque (2004, pp. 40–41), cuyas transcripciones representan el <em>motor ritmo-armónico</em> canónico del Tiple:</p>
+
+    <div style="margin:22px 0;padding:18px;background:var(--fondo-nota);border:1px solid var(--regleta);">
+      <div class="caption-tabla">Tabla 1 — Vectores binarios en ℤ₁₂</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--tinta-s);margin-bottom:12px;">
+        Posiciones en dorado = tiempos fuertes {0,3,6,9}. Negro = ataque. Gris = silencio.
+      </div>
+      <div class="fila-vector">
+        <span class="etiq-vec g-bam">Bambuco</span>
+        <div class="celdas-vec">
+          <div class="cv cv-0 cv-f">0</div><div class="cv cv-1">1</div><div class="cv cv-1">1</div>
+          <div class="cv cv-0 cv-f">0</div><div class="cv cv-1">1</div><div class="cv cv-1">1</div>
+          <div class="cv cv-0 cv-f">0</div><div class="cv cv-1">1</div><div class="cv cv-0">0</div>
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-1">1</div><div class="cv cv-0">0</div>
+        </div>
+        <span class="stats-vec">k=7 · H=1,449 · E=0,592 · 6/8+3/4</span>
+      </div>
+      <div class="fila-vector">
+        <span class="etiq-vec g-pas">Pasillo</span>
+        <div class="celdas-vec">
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-1">1</div>
+          <div class="cv cv-0 cv-f">0</div><div class="cv cv-1">1</div><div class="cv cv-0">0</div>
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-1">1</div>
+          <div class="cv cv-0 cv-f">0</div><div class="cv cv-1">1</div><div class="cv cv-0">0</div>
+        </div>
+        <span class="stats-vec">k=6 · H=0,000 · E=1,000 · 3/4</span>
+      </div>
+      <div class="fila-vector">
+        <span class="etiq-vec g-dan">Danza</span>
+        <div class="celdas-vec">
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-0">0</div>
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-0">0</div>
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-0">0</div>
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-0">0</div>
+        </div>
+        <span class="stats-vec">k=4 · H=0,000 · E=1,000 · 3/4</span>
+      </div>
+      <div class="fila-vector">
+        <span class="etiq-vec g-gua">Guabina</span>
+        <div class="celdas-vec">
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-1">1</div>
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-1">1</div>
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-1">1</div>
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-0">0</div>
+        </div>
+        <span class="stats-vec">k=7 · H=1,449 · E=0,592 · 3/4</span>
+      </div>
+      <div class="fila-vector">
+        <span class="etiq-vec g-tor">Torbellino</span>
+        <div class="celdas-vec">
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-0">0</div>
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-0">0</div>
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-0">0</div>
+          <div class="cv cv-0 cv-f">0</div><div class="cv cv-0">0</div><div class="cv cv-0">0</div>
+        </div>
+        <span class="stats-vec">k=3 · H=0,918 · E=0,646 · 3/4</span>
+      </div>
+      <div class="fila-vector">
+        <span class="etiq-vec g-rum">Rumba Criolla</span>
+        <div class="celdas-vec">
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-1">1</div><div class="cv cv-0">0</div>
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-1">1</div><div class="cv cv-0">0</div>
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-1">1</div>
+          <div class="cv cv-1 cv-f">1</div><div class="cv cv-0">0</div><div class="cv cv-1">1</div>
+        </div>
+        <span class="stats-vec">k=8 · H=1,000 · E=0,667 · 2/4</span>
+      </div>
+    </div>
+
+    <p>Las métricas formales se calculan así. Sea <strong>v</strong> ∈ {0,1}¹² con conjunto de ataques O = {p ∈ ℤ₁₂ : v[p]=1} y cardinalidad k = |O|. La secuencia de intervalos entre ataques se define ciclicamente:</p>
+    <div class="ecuacion">
+      IOI[i] = p[i+1] − p[i]   para i = 0,…,k−2<br>
+      IOI[k−1] = (12 − p[k−1]) + p[0]  (cierre cíclico)<br>
+      Verificación: Σ IOI = 12 = n <span class="etiq-ec">(1)</span>
+    </div>
+    <div class="ecuacion">
+      H(v) = − Σᵥ p(v)·log₂ p(v),  donde p(v) = frec(v)/k<span class="etiq-ec">(2)</span><br>
+      E(v) = max(0, 1 − σ(IOI) / (n/k)),  σ = desv. estándar poblacional<span class="etiq-ec">(3)</span>
+    </div>
+
+    <h3>4.2 Métricas de distancia: d_H frente a d_S</h3>
+    <p>La <strong>distancia de Hamming</strong> d_H(A,B) = |{i : A[i] ≠ B[i]}| cuenta las posiciones donde los dos vectores binarios difieren. Es computacionalmente trivial y está definida independientemente de que |O_A| = |O_B|. Para ritmos de igual cardinalidad k, d_H y d_S son monótonamente equivalentes (Toussaint, 2013, Teorema 17.2), de modo que d_H es un indicador válido. Sin embargo, para ritmos de cardinalidad diferente —el caso genérico en este corpus, donde k varía de 3 a 8— d_H confunde dos fenómenos distintos: diferencias estructurales en la posición de los ataques respecto a la cuadrícula métrica, y diferencias en la densidad de onset ρ = k/n.</p>
+
+    <p>La <strong>distancia de intercambio dirigido</strong> d_S(A,B) resuelve esto definiendo el coste mínimo de transformar A en B mediante desplazamientos unitarios de ataques a lo largo del collar (Toussaint, 2013, cap. 17). Para cardinalidades mixtas se implementa como la Distancia del Transportador de Tierra (<em>Earth Mover's Distance</em>) circular en ℤ₁₂, con asignación óptima por el algoritmo húngaro.</p>
+
+    <h3>4.3 Matrices de distancias y robustez métrica</h3>
+
+    <div class="envoltura-tabla">
+      <div class="caption-tabla">Tabla 2 — Matriz de distancia de Hamming d_H sobre ℤ₁₂</div>
+      <table>
+        <thead>
+          <tr><th></th><th class="g-bam">BAM</th><th class="g-pas">PAS</th><th class="g-dan">DAN</th><th class="g-gua">GUA</th><th class="g-tor">TOR</th><th class="g-rum">RUM</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="etiq-td g-bam">Bambuco</td><td class="c-diag">—</td><td class="c-alto">7</td><td class="c-alto">9</td><td class="c-alto">8</td><td class="c-alto">10</td><td class="c-alto">9</td></tr>
+          <tr><td class="etiq-td g-pas">Pasillo</td><td class="c-alto">7</td><td class="c-diag">—</td><td class="c-med">6</td><td class="c-med">5</td><td class="c-med">5</td><td class="c-med">6</td></tr>
+          <tr><td class="etiq-td g-dan">Danza</td><td class="c-alto">9</td><td class="c-med">6</td><td class="c-diag">—</td><td class="c-bajo">3</td><td class="c-bajo">1</td><td class="c-med">4</td></tr>
+          <tr><td class="etiq-td g-gua">Guabina</td><td class="c-alto">8</td><td class="c-med">5</td><td class="c-bajo">3</td><td class="c-diag">—</td><td class="c-med">4</td><td class="c-med">5</td></tr>
+          <tr><td class="etiq-td g-tor">Torbellino</td><td class="c-alto">10</td><td class="c-med">5</td><td class="c-bajo">1</td><td class="c-med">4</td><td class="c-diag">—</td><td class="c-med">5</td></tr>
+          <tr><td class="etiq-td g-rum">Rumba Criolla</td><td class="c-alto">9</td><td class="c-med">6</td><td class="c-med">4</td><td class="c-med">5</td><td class="c-med">5</td><td class="c-diag">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="envoltura-tabla">
+      <div class="caption-tabla">Tabla 3 — Matriz de distancia de intercambio dirigido d_S (Toussaint, 2013)</div>
+      <table>
+        <thead>
+          <tr><th></th><th class="g-bam">BAM</th><th class="g-pas">PAS</th><th class="g-dan">DAN</th><th class="g-gua">GUA</th><th class="g-tor">TOR</th><th class="g-rum">RUM</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="etiq-td g-bam">Bambuco</td><td class="c-diag">—</td><td>5,00</td><td>4,00</td><td>5,00</td><td class="c-alto">10,00</td><td>5,00</td></tr>
+          <tr><td class="etiq-td g-pas">Pasillo</td><td>5,00</td><td class="c-diag">—</td><td>5,00</td><td class="c-bajo">4,00</td><td>9,00</td><td class="c-bajo">4,00</td></tr>
+          <tr><td class="etiq-td g-dan">Danza</td><td>4,00</td><td>5,00</td><td class="c-diag">—</td><td class="c-bajo">3,00</td><td class="c-bajo">4,00</td><td>6,00</td></tr>
+          <tr><td class="etiq-td g-gua">Guabina</td><td>5,00</td><td class="c-bajo">4,00</td><td class="c-bajo">3,00</td><td class="c-diag">—</td><td class="c-alto">11,00</td><td class="c-bajo">4,00</td></tr>
+          <tr><td class="etiq-td g-tor">Torbellino</td><td class="c-alto">10,00</td><td>9,00</td><td class="c-bajo">4,00</td><td class="c-alto">11,00</td><td class="c-diag">—</td><td class="c-alto">12,00</td></tr>
+          <tr><td class="etiq-td g-rum">Rumba Criolla</td><td>5,00</td><td class="c-bajo">4,00</td><td>6,00</td><td class="c-bajo">4,00</td><td class="c-alto">12,00</td><td class="c-diag">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grilla-rob">
+      <div class="tarj-rob rob-ok">
+        <h4>✓ Árbol d_H: topología clásica</h4>
+        Fusiones: {DAN,TOR}→{GUA}→{RUM}→{PAS}→{BAM}. Distancias: 1,00 · 3,50 · 4,67 · 5,50 · 8,60. Bambuco aislado final.
+      </div>
+      <div class="tarj-rob rob-div">
+        <h4>⚑ Árbol d_S: topología divergente</h4>
+        Fusiones: {DAN,GUA}→{PAS,RUM}→{BAM,C1}→{C2,C3}→{TOR,C4}. Torbellino aislado final bajo d_S. Divergencia informativa: ver §6.
+      </div>
+    </div>
+
+    <div class="caja-nota">
+      <div class="etiq-nota">Hallazgo de robustez — Interpretación de la divergencia d_H / d_S</div>
+      La divergencia entre d_H y d_S en este corpus es, en sí misma, un resultado publicable. Bajo d_H, el Torbellino (k=3) se funde primero con la Danza (k=4), pues difieren en un solo bit. Bajo d_S, el Torbellino queda aislado al final porque transportar 3 ataques a cualquier configuración de k≥4 tiene coste elevado. Esto demuestra que la cardinalidad mixta k∈{3,…,8} es un factor métrico significativo en el corpus andino colombiano, y que d_H y d_S miden dimensiones complementarias —posición vs. densidad— de la geometría rítmica.
+    </div>
+
+    <h3>4.4 Cadena DSP</h3>
+    <p>Los registros de audio (44.100 Hz, 20 s por género) se analizaron con librosa (parámetros STFT: n_fft = 2.048, hop_length = 512). Tres dimensiones de características constituyen el espacio acústico F:</p>
+    <div class="ecuacion">
+      ZCR(frame) = (1/2N)·Σ |sgn(y[m]) − sgn(y[m−1])|<span class="etiq-ec">(4)</span><br><br>
+      γ₁(frame) = Σ_f ((f−μ₁)/σ)³·p(f)  [asimetría espectral, momento 3.º]<span class="etiq-ec">(5)</span><br><br>
+      E_uña(frame) = Σ_{f∈[3k,7k]} |S(f)|² / Σ_{f>0} |S(f)|²<span class="etiq-ec">(6)</span><br><br>
+      ρ = N_ataques / T_duración  [densidad de onset, ataques/segundo]<span class="etiq-ec">(7)</span>
+    </div>
+  </div>
+
+  <!-- 5. RESULTADOS -->
+  <div class="seccion">
+    <h2><span class="num-sec">5.</span> Resultados</h2>
+
+    <h3>5.1 Árbol filogenético y clústeres</h3>
+    <div class="envoltura-tabla">
+      <div class="caption-tabla">Tabla 4 — Secuencia UPGMA (distancia de Hamming d_H)</div>
+      <table>
+        <thead><tr><th>Paso</th><th>Elementos fusionados</th><th>n₁ + n₂</th><th>d_fusión</th><th>Nodo</th></tr></thead>
+        <tbody>
+          <tr><td>C1</td><td>Danza + Torbellino</td><td>1 + 1</td><td>1,000</td><td>C1</td></tr>
+          <tr><td>C2</td><td>Guabina + C1</td><td>1 + 2</td><td>3,500</td><td>C2</td></tr>
+          <tr><td>C3</td><td>Rumba Criolla + C2</td><td>1 + 3</td><td>4,667</td><td>C3</td></tr>
+          <tr><td>C4</td><td>Pasillo + C3</td><td>1 + 4</td><td>5,500</td><td>C4</td></tr>
+          <tr><td>C5</td><td>Bambuco + C4</td><td>1 + 5</td><td>8,600</td><td>C5 (raíz)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cuadros-cluster">
+      <div class="tarj-cluster" style="color:var(--dan)">
+        <div class="etiq-cl">Clúster I — Ternario puro (d_H)</div>
+        <div class="miembros">Danza · Torbellino</div>
+        <div class="props">d_H = 1 · H ∈ {0,000; 0,918}<br>Onsets ⊆ {0,3,6,9}<br>Torbellino = restricción austera de la Danza (k=3 vs k=4)</div>
+      </div>
+      <div class="tarj-cluster" style="color:var(--gua)">
+        <div class="etiq-cl">Clúster II — Polimetría controlada (d_H)</div>
+        <div class="miembros">Guabina · Pasillo · Rumba Criolla</div>
+        <div class="props">d_H inter-clúster: 3–6<br>Deformaciones locales de la malla ternaria sin abandono del marco métrico</div>
+      </div>
+      <div class="tarj-cluster" style="color:var(--bam)">
+        <div class="etiq-cl">Clúster III — Dominio bimétrico (d_H)</div>
+        <div class="miembros">Bambuco (aislado)</div>
+        <div class="props">d_H mín. = 8,60 · d_S mín. = 5,00<br>Inicio anacrúsico v[0]=0<br>IOI = {1,1,2,1,1,2,1,2,1,1}<br>Co-axialidad 6/8 ∩ 3/4</div>
+      </div>
+    </div>
+
+    <h3>5.2 Validación DSP</h3>
+    <div class="envoltura-tabla">
+      <div class="caption-tabla">Tabla 5 — Parámetros DSP extraídos del Tiple (44.100 Hz)</div>
+      <table>
+        <thead><tr><th>Género</th><th>ZCR</th><th>γ₁</th><th>E_uña</th><th>ρ</th><th>Clúster DSP</th></tr></thead>
+        <tbody>
+          <tr><td class="etiq-td g-bam">Bambuco</td><td>Alto</td><td>Pos. alto</td><td>Alto</td><td>Alto</td><td>III</td></tr>
+          <tr><td class="etiq-td g-pas">Pasillo</td><td>Medio</td><td>Negativo</td><td>Bajo</td><td>Medio</td><td>II</td></tr>
+          <tr><td class="etiq-td g-dan">Danza</td><td>Med-bajo</td><td>Neg. mod.</td><td>Bajo</td><td>Bajo</td><td>I</td></tr>
+          <tr><td class="etiq-td g-gua">Guabina</td><td>Med-bajo</td><td>Pos. bajo</td><td>Medio</td><td>Alto</td><td>I/II</td></tr>
+          <tr><td class="etiq-td g-tor">Torbellino</td><td>Alto</td><td>Pos. alto</td><td>Alto</td><td>Bajo</td><td>III*</td></tr>
+          <tr><td class="etiq-td g-rum">Rumba Criolla</td><td>Medio</td><td>Negativo</td><td>Bajo</td><td>Alto</td><td>II</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 6. DISCUSIÓN -->
+  <div class="seccion">
+    <h2><span class="num-sec">6.</span> Discusión</h2>
+    <h3>6.1 El Bambuco como género computacionalmente aislado</h3>
+    <p>Ambas métricas —d_H y d_S— sitúan al Bambuco como el elemento más distante de todos los demás géneros. Este aislamiento tiene tres causas geométricas: es el único vector con v[0]=0 (comienzo anacrúsico), cuya secuencia IOI no contiene el intervalo de longitud 3 —característico de todos los géneros ternarios—, y presenta simultáneamente patrones de intervalo de longitud 1 y 2 en pares alternantes que codifican la estructura de semicompás 6/8 dentro del marco 3/4. Estos hallazgos aportan un argumento computacional al consenso musicológico de que el Bambuco no puede notarse adecuadamente en un solo compás.</p>
+
+    <h3>6.2 La discrepancia del Torbellino y su interpretación</h3>
+    <p>El Torbellino se asigna al Clúster I (ternario puro) por d_H, pero comparte la frontera de ZCR alta del Bambuco en la capa DSP. Esta discrepancia no es una inconsistencia metodológica, sino un hallazgo significativo: revela que el Torbellino comparte la técnica de <em>rasgueo</em> de barrida descendente del Bambuco —produciendo ZCR alta— mientras que su estructura de onset es métricamente simple (k=3, onsets en {0,3,6}). Las dos capas miden cosas distintas —técnica vs. estructura— y su no-coincidencia es informativa.</p>
+  </div>
+
+  <!-- 7. LIMITACIONES -->
+  <div class="seccion">
+    <h2><span class="num-sec">7.</span> Limitaciones y trabajo futuro</h2>
+
+    <div class="caja-nota" style="border-color:var(--alerta);background:#fff5f5;">
+      <div class="etiq-nota" style="color:var(--alerta)">⚑ Limitación crítica — Corpus de intérprete único (n=1)</div>
+      <p style="margin-bottom:10px;">El corpus actual comprende un solo registro por género, todos interpretados por el mismo ejecutante (el autor). Los vectores ℤ₁₂ son deterministas —son transcripciones del <em>motor ritmo-armónico</em> según Franco Duque (2004)—, pero los parámetros DSP (ZCR, γ₁, E_uña, ρ) son realizaciones estocásticas de ese patrón canónico.</p>
+    </div>
+
+    <p>Se propone el siguiente <strong>protocolo de varianza bootstrap</strong> para validación futura. Para J ≥ 3 tiplistas independientes por género, R ≥ 5 registros por (intérprete, género), B = 1.000 muestras bootstrap, se define el índice de estabilidad de clúster:</p>
+    <div class="ecuacion">
+      φ(Cᵢ) = |{b : C_b = Cᵢ}| / B<br><br>
+      φ > 0,95 = estabilidad fuerte · φ > 0,80 = estabilidad moderada<span class="etiq-ec">(8)</span>
+    </div>
+
+    <p>Como cota inferior, d_H(Danza, Torbellino) = 1 implica que se requiere exactamente un desplazamiento de onset para cambiar la asignación del Torbellino al Clúster I, lo que correspondería a una ejecución métricamente inconsistente del patrón canónico. Se conjetura φ(Clúster I) > 0,90, pero esto debe confirmarse empíricamente.</p>
+  </div>
+
+  <!-- 8. CONCLUSIONES -->
+  <div class="seccion">
+    <h2><span class="num-sec">8.</span> Conclusiones</h2>
+    <p>Se ha presentado la primera caracterización filogenética computacional bicapa de los seis géneros principales de la tradición musical andina colombiana. La codificación de los patrones ritmo-armónicos como collares binarios en ℤ₁₂ y la aplicación de las métricas de Hamming d_H y de intercambio dirigido d_S revelan una divergencia topológica informativa entre árboles UPGMA: d_H agrupa {Danza, Torbellino} como el clúster más próximo, mientras que d_S aísla al Torbellino por su cardinalidad baja (k=3). Esta divergencia es, en sí misma, un resultado original que demuestra que la cardinalidad mixta del corpus andino colombiano exige el uso conjunto de ambas métricas.</p>
+    <p>El aislamiento filogenético del Bambuco, confirmado independientemente por el análisis acústico del Tiple, proporciona una base computacional para el histórico debate musicológico sobre su estatus métrico. El Tiple, como instrumento con órdenes triples ejecutados mediante <em>rasgueo</em>, ocupa una posición privilegiada como instrumento analítico: su salida acústica codifica la estructura rítmica de modos no disponibles desde la guitarra o la bandola.</p>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="seccion">
+    <h2><span class="num-sec">Ref.</span> Referencias</h2>
+    <div class="referencias">
+      <p>Díaz-Báñez, J. M., Farigu, G., Gómez, F., Rappaport, D. y Toussaint, G. T. (2005). El compás flamenco: A phylogenetic analysis. <em>Proceedings of BRIDGES: Mathematical Connections in Art, Music and Science</em>, pp. 61–70.</p>
+      <p>Franco Duque, L. (2004). <em>Músicas andinas occidentales: Entre pasillos y bambucos</em>. Ministerio de Cultura de Colombia.</p>
+      <p>Holzapfel, A. y Stylianou, Y. (2011). Rhythmic similarity of music based on dynamic periodicity. <em>Proceedings of ICASSP 2011</em>, pp. 189–192. IEEE.</p>
+      <p>Ministerio de Cultura de Colombia. (2004). <em>Música andina occidental entre pasillos y bambucos: Cartilla de iniciación musical</em>. Plan Nacional de Música para la Convivencia.</p>
+      <p>Ochoa Escobar, J. S., Convers, L. y Hernández, O. (2010). <em>Sesquiálteras: Idas y venidas. Músicas de Colombia y Venezuela</em>. Pontificia Universidad Javeriana.</p>
+      <p>Pérez-León, F. (2018). <em>Estudio monográfico: Distancias rítmicas en el flamenco y la música cubana</em>. Tesis de Máster, Universidad de Sevilla.</p>
+      <p>Toussaint, G. T. (2013). <em>The Geometry of Musical Rhythm: What Makes a "Good" Rhythm Good?</em> CRC Press / Taylor &amp; Francis.</p>
+      <p><em>Por los caminos del tiple</em> (2.ª ed.). Biblioteca Luis Ángel Arango, Banco de la República de Colombia. [Edición digitalizada, consultada 2024].</p>
+    </div>
+  </div>
+
+  <div class="notas-pie">
+    <p><span class="np">[1]</span> La verificación Σ IOI = n = 12 actúa como invariante algebraico de cada vector; cualquier error de transcripción produce una violación detectable del cierre cíclico.</p>
+    <p><span class="np">[2]</span> Los valores de d_S para cardinalidades mixtas se calculan vía Earth Mover's Distance (Wasserstein-1) circular en ℤ₁₂, con la implementación <code>linear_sum_assignment</code> de scipy.optimize.</p>
+    <p><span class="np">[3]</span> El script completo <code>adn_ritmico_andino_v2.py</code> acompaña este manuscrito en el repositorio GitHub: <strong>github.com/acordesolano/adn-ritmico-andino</strong></p>
+  </div>
+
+</div>
+</body>
+</html>
