@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El parentesco oculto · Manuscrito Humanista v3 con Gráficos · Conde Solano 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --t:#3d2b1a;--ts:#6b4c35;--o:#9b6a2e;--p:#faf3e4;--l:#d4b896;
+  --v:#2d5a3d;--r:#7a1f1f;--fn:#f5ede0;
+  --bam:#C0392B;--pas:#1A5276;--dan:#1E8449;--gua:#6C3483;--tor:#B7950B;--rum:#117A65;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--p);color:var(--t);font-size:18px;line-height:1.82;}
+.top{background:var(--t);color:var(--p);padding:9px 44px;display:flex;justify-content:space-between;align-items:center;font-family:'Fira Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;position:sticky;top:0;z-index:100;}
+.badge{background:var(--o);color:#fff;padding:2px 9px;font-size:9.5px;}
+.pg{max-width:870px;margin:0 auto;padding:56px 44px 120px;}
+.epig{border-left:3px solid var(--o);padding:13px 22px;margin:0 0 42px;font-style:italic;font-size:17px;color:var(--ts);line-height:1.75;}
+.epig .fe{font-style:normal;font-family:'Fira Mono',monospace;font-size:12px;color:var(--o);margin-top:5px;}
+.bt{border-top:3px double var(--t);border-bottom:1px solid var(--l);padding:42px 0 30px;margin-bottom:42px;}
+.erev{font-family:'Fira Mono',monospace;font-size:10px;color:var(--o);letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px;}
+h1{font-family:'Lora',serif;font-size:2.05rem;font-weight:500;line-height:1.28;margin-bottom:10px;}
+h1 em{color:var(--o);}
+.sub{font-family:'Lora',serif;font-style:italic;font-size:1.05rem;color:var(--ts);margin-bottom:18px;line-height:1.45;}
+.aut{font-size:14.5px;color:var(--ts);margin-bottom:4px;}
+.fil{font-family:'Fira Mono',monospace;font-size:10.5px;color:var(--o);letter-spacing:.05em;margin-bottom:16px;line-height:1.6;}
+.meta{display:flex;gap:20px;flex-wrap:wrap;font-family:'Fira Mono',monospace;font-size:10px;color:var(--ts);border-top:1px solid var(--l);padding-top:12px;margin-top:12px;}
+.abs{background:#f0e8d4;border-top:2px solid var(--t);padding:22px 30px;margin-bottom:46px;font-size:15.5px;line-height:1.85;}
+.etq{font-family:'Fira Mono',monospace;font-size:10px;color:var(--o);letter-spacing:.22em;text-transform:uppercase;margin-bottom:10px;}
+.sec{margin-bottom:50px;}
+h2{font-family:'Lora',serif;font-size:1.38rem;font-weight:500;border-bottom:1px solid var(--l);padding-bottom:7px;margin-bottom:20px;}
+.ns{font-family:'Fira Mono',monospace;font-size:10.5px;color:var(--o);margin-right:8px;letter-spacing:.1em;font-weight:400;}
+h3{font-family:'Lora',serif;font-size:1.08rem;font-weight:500;margin:24px 0 9px;font-style:italic;}
+p{margin-bottom:14px;text-align:justify;}
+.cita{border-left:3px solid var(--l);padding:11px 20px;margin:18px 0;font-style:italic;color:var(--ts);font-size:16px;line-height:1.78;}
+.cita .fe{font-style:normal;font-family:'Fira Mono',monospace;font-size:11px;color:var(--o);margin-top:6px;display:block;}
+/* CAJAS */
+.caja-oral{background:#fdf6e3;border:1px solid #c9a84c;border-left:5px solid var(--o);padding:20px 26px;margin:24px 0;font-size:14px;line-height:1.75;}
+.co-tit{font-family:'Lora',serif;font-size:1rem;font-weight:700;color:var(--o);margin-bottom:12px;}
+.co-ln{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;}
+.co-ico{font-size:20px;flex-shrink:0;margin-top:2px;}
+/* DEBATE */
+.debate{background:#fdf8ee;border:1px solid var(--l);border-top:3px solid var(--o);padding:16px 24px;margin:22px 0;}
+.dbt{font-family:'Lora',serif;font-size:1rem;font-weight:600;margin-bottom:10px;color:var(--r);}
+.pos2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;}
+.pos{padding:11px 14px;font-size:13px;line-height:1.65;border:1px solid var(--l);}
+.pos .pt{font-family:'Fira Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;font-weight:500;}
+.ph{background:#f5ede0;}.ph .pt{color:var(--o);}
+.pc{background:#eaf5ea;}.pc .pt{color:var(--v);}
+/* HALLAZGO */
+.hall{background:var(--t);color:var(--p);padding:18px 26px;margin:24px 0;font-size:15px;line-height:1.82;}
+.hall .eh{font-family:'Fira Mono',monospace;font-size:9.5px;color:#c8962a;letter-spacing:.2em;text-transform:uppercase;margin-bottom:9px;}
+.hall strong{color:#f0c060;}
+/* CLUSTERS */
+.cl{border:2px solid currentColor;margin:14px 0;overflow:hidden;}
+.cl-cab{padding:9px 18px;font-family:'Lora',serif;font-size:.9rem;font-weight:600;color:#fff;}
+.cl-bod{padding:14px 20px;font-size:14px;line-height:1.78;}
+.cl-bod .mf{font-style:italic;margin-bottom:9px;color:var(--ts);}
+.tip{background:rgba(255,255,255,.55);border-left:3px solid currentColor;padding:9px 14px;margin-top:12px;font-size:12.5px;line-height:1.65;}
+/* GÉNEROS */
+.galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin:22px 0;}
+.gen{padding:13px 15px;border:2px solid currentColor;font-size:13px;line-height:1.6;}
+.gen .nm{font-family:'Lora',serif;font-size:14px;font-weight:700;margin-bottom:4px;}
+.gen .cm{font-family:'Fira Mono',monospace;font-size:9px;margin-bottom:5px;opacity:.75;}
+/* TABLA PED */
+.tp{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.tp thead tr{background:var(--t);color:var(--p);}
+.tp thead th{padding:8px 11px;text-align:left;font-family:'Fira Mono',monospace;font-size:9.5px;letter-spacing:.07em;font-weight:400;}
+.tp tbody tr:nth-child(even){background:#f0e8d4;}
+.tp tbody td{padding:7px 11px;border-bottom:1px solid var(--l);font-size:12.5px;vertical-align:top;}
+.tp tbody td:first-child{font-family:'Lora',serif;font-weight:600;font-size:13.5px;}
+/* COLORES GÉNERO */
+.gb{color:var(--bam);}.gp{color:var(--pas);}.gd{color:var(--dan);}
+.gg{color:var(--gua);}.gt{color:var(--tor);}.gr{color:var(--rum);}
+/* FIGURA */
+.fig{margin:28px 0;background:#fff;border:1px solid var(--l);padding:20px 16px 14px;}
+.ftit{font-family:'Fira Mono',monospace;font-size:10px;color:var(--o);letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;text-align:center;}
+.fcap{font-size:13px;color:var(--ts);font-style:italic;margin-top:11px;text-align:center;line-height:1.55;}
+.fig svg{display:block;margin:0 auto;}
+/* REFS */
+.refs{font-size:13.5px;line-height:1.82;}
+.refs p{text-indent:-26px;padding-left:26px;margin-bottom:9px;text-align:left;}
+.pie{border-top:1px solid var(--l);margin-top:54px;padding-top:14px;font-size:12.5px;color:var(--ts);line-height:1.7;}
+.pie p{margin-bottom:6px;}
+.np{font-family:'Fira Mono',monospace;color:var(--o);font-size:10px;margin-right:4px;}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <span>Manuscrito Humanista v3 con Gráficos · Cuadernos MAVAE / Revista Musical Chilena · 2025</span>
+  <span class="badge">Investigación-Creación · Patrimonio · 6 Figuras SVG</span>
+  <span>Conde Solano, L. A.</span>
+</div>
+
+<div class="pg">
+
+<div class="epig">
+  «El secreto de tocar el tiple está en la mano derecha. Pero surrunguearlo, acariciando amorosamente sus cuerdas, taparlo haciéndole pozos de encantado silencio, tañerlo bravamente en joropos y torbellinos… eso exige más que habilidad, un don especial, una magia única que pocos tienen.»
+  <span class="fe">— Davidson, citado en <em>Por los caminos del tiple</em>, p. 179</span>
+</div>
+
+<div class="bt">
+  <div class="erev">Artículo de investigación-creación · Cuadernos MAVAE · Etnomusicología · Pedagogía · Patrimonio</div>
+  <h1>El parentesco oculto de los ritmos andinos:<br><em>una relectura de la métrica colombiana<br>a través del aire de la mano derecha en el Tiple</em></h1>
+  <div class="sub">El Tiple como sujeto epistemológico: tradición oral, génesis rítmica y pedagogía andina colombiana</div>
+  <div class="aut"><strong>Luis Alexander Conde Solano</strong></div>
+  <div class="fil">Dr. en Matemática Educativa · Profesor Investigador, Universidad Complutense de Madrid<br>
+  Tiplista experto · Tradición oral escuela Mantilla-Conde (Santander, Colombia)</div>
+  <div class="meta">
+    <span>2025</span>
+    <span>Investigación-Creación · Patrimonio cultural inmaterial</span>
+    <span>Palabras clave: Tiple · Bambuco · sesquiáltera · aire · tradición oral · pedagogía</span>
+  </div>
+</div>
+
+<div class="abs">
+  <div class="etq">Resumen</div>
+  <p>Este artículo propone una nueva lectura del mapa métrico de la música andina colombiana construida desde el <em>aire de la mano derecha</em> del Tiple: la forma en que el rasgueo configura y transmite la estructura rítmica de cada género por encima del estilo individual del intérprete. Los registros acústicos provienen de ejecuciones del autor —Dr. en Matemática Educativa, Profesor Investigador de la Universidad Complutense de Madrid y tiplista formado durante más de veinte años bajo la tutela de Rodrigo Mantilla y Carlos Conde, ganadores del primer concurso nacional de duetos de Tiple (Vélez, Santander, 1984)— y corresponden a <em>patrones rítmicos básicos sin variantes</em>, lo que permite aislar la génesis rítmica de cada género. A través de un modelo geométrico moderno (Toussaint, 2013), se construye un árbol de parentesco que revela tres familias métricas y confirma matemáticamente la máxima oral: un bambuco no puede apasillarse.</p>
+  <div style="margin-top:11px;font-family:'Fira Mono',monospace;font-size:12px;color:var(--ts);"><strong>Palabras clave:</strong> Bambuco · Tiple colombiano · sesquiáltera · aire de la mano derecha · tradición oral · Rodrigo Mantilla · Carlos Conde · pedagogía musical · patrimonio inmaterial · filogenética rítmica</div>
+</div>
+
+<!-- §1 -->
+<div class="sec">
+  <h2><span class="ns">1.</span>«Un bambuco no puede apasillarse»</h2>
+
+  <p>En la tradición oral de los tiplistas santandereanos existe una norma no escrita pero absolutamente vinculante: un bambuco no puede «apasillar». Esta advertencia no es estética: es estructural. Un tiplista que ejecute el Bambuco con el rasgueo del Pasillo no está interpretando un bambuco con error de estilo —está destruyendo el bambuco. El <em>aire de la mano derecha</em> es la métrica misma, hecha movimiento y sonido.</p>
+
+  <div class="debate">
+    <div class="dbt">El debate histórico: ¿En qué compás se escribe el Bambuco?</div>
+    <div class="pos2">
+      <div class="pos ph"><div class="pt">Posición histórica</div>D'Alemán (1877, 1895) describe el rasgueo del Bambuco como «aristocrático» sin prescribir compás. Cano et al. (TISMIR, 2021) confirmaron que 10 músicos colombianos producen <strong>cinco interpretaciones métricas distintas</strong> del mismo bambuco. La transmisión oral resolvió el problema pragmáticamente: se aprende el aire, no la cifra de compás.</div>
+      <div class="pos pc"><div class="pt">Lo que el árbol confirma</div>El patrón canónico del Bambuco activa simultáneamente las cuadrículas de 6/8 y 3/4. No es ambigüedad: es la estructura misma del género. El árbol muestra que el Bambuco está a 8,6 pasos del resto del corpus —más lejos que cualquier otro par de géneros. Por eso no puede apasillarse.</div>
+    </div>
+  </div>
+</div>
+
+<!-- §2 — GENEALOGÍA + FIGURA 1 -->
+<div class="sec">
+  <h2><span class="ns">2.</span>De dónde vienen los sonidos: la escuela Mantilla-Conde</h2>
+
+  <div class="caja-oral">
+    <div class="co-tit">Figura 1 — Genealogía de la tradición oral</div>
+    <p style="font-size:13.5px;margin-bottom:12px;color:var(--ts);">Los registros analizados provienen de una línea de transmisión oral verificada:</p>
+
+    <!-- FIGURA 1 SVG GENEALOGÍA -->
+    <svg width="780" height="240" viewBox="0 0 780 240" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+          <polygon points="0 0,8 3,0 6" fill="#9b6a2e"/>
+        </marker>
+      </defs>
+      <rect width="780" height="240" fill="#fdf6e3" rx="4"/>
+      <!-- Línea temporal -->
+      <line x1="30" y1="120" x2="750" y2="120" stroke="#d4b896" stroke-width="1" stroke-dasharray="4,3"/>
+      <!-- Décadas -->
+      <text x="90" y="230" font-family="Fira Mono,monospace" font-size="9.5" fill="#9b6a2e" text-anchor="middle">1950–60</text>
+      <text x="270" y="230" font-family="Fira Mono,monospace" font-size="9.5" fill="#9b6a2e" text-anchor="middle">1970–90</text>
+      <text x="490" y="230" font-family="Fira Mono,monospace" font-size="9.5" fill="#9b6a2e" text-anchor="middle">1984 · Vélez, Santander</text>
+      <text x="680" y="230" font-family="Fira Mono,monospace" font-size="9.5" fill="#9b6a2e" text-anchor="middle">Hoy · UCM Madrid</text>
+      <!-- NODO 1: Oriol Rangel -->
+      <rect x="18" y="55" width="144" height="62" rx="6" fill="#1A5276"/>
+      <text x="90" y="76" font-family="Lora,serif" font-size="12.5" fill="white" text-anchor="middle" font-weight="bold">Oriol Rangel</text>
+      <text x="90" y="92" font-family="Fira Mono,monospace" font-size="9" fill="#a8c8e8" text-anchor="middle">Pianista · Director</text>
+      <text x="90" y="107" font-family="Fira Mono,monospace" font-size="9" fill="#a8c8e8" text-anchor="middle">Años 50–60</text>
+      <circle cx="90" cy="120" r="4" fill="#1A5276"/>
+      <!-- flecha 1→2 -->
+      <line x1="166" y1="86" x2="196" y2="86" stroke="#9b6a2e" stroke-width="1.8" marker-end="url(#a1)"/>
+      <text x="181" y="80" font-family="Fira Mono,monospace" font-size="7.5" fill="#9b6a2e" text-anchor="middle">acompañante</text>
+      <!-- NODO 2a: Rodrigo Mantilla -->
+      <rect x="200" y="40" width="158" height="78" rx="6" fill="#B7950B"/>
+      <text x="279" y="62" font-family="Lora,serif" font-size="12.5" fill="white" text-anchor="middle" font-weight="bold">Rodrigo Mantilla</text>
+      <text x="279" y="78" font-family="Fira Mono,monospace" font-size="9" fill="#fff3cc" text-anchor="middle">Tiplista armónico</text>
+      <text x="279" y="93" font-family="Fira Mono,monospace" font-size="8.5" fill="#fff3cc" text-anchor="middle">«mayor acompañante»</text>
+      <text x="279" y="107" font-family="Fira Mono,monospace" font-size="8" fill="#fff3cc" text-anchor="middle">Por los caminos, p. 157</text>
+      <circle cx="279" cy="120" r="4" fill="#B7950B"/>
+      <!-- NODO 2b: Carlos Conde -->
+      <rect x="200" y="138" width="158" height="66" rx="6" fill="#117A65"/>
+      <text x="279" y="158" font-family="Lora,serif" font-size="12.5" fill="white" text-anchor="middle" font-weight="bold">Carlos Conde</text>
+      <text x="279" y="174" font-family="Fira Mono,monospace" font-size="9" fill="#a8e8d8" text-anchor="middle">Tiplista melódico</text>
+      <text x="279" y="189" font-family="Fira Mono,monospace" font-size="8.5" fill="#a8e8d8" text-anchor="middle">«punteador inigualable»</text>
+      <text x="279" y="200" font-family="Fira Mono,monospace" font-size="8" fill="#a8e8d8" text-anchor="middle">Por los caminos, p. 165</text>
+      <!-- MEDALLA CONCURSO -->
+      <rect x="400" y="82" width="168" height="74" rx="6" fill="#7a1f1f"/>
+      <text x="484" y="103" font-family="Lora,serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">🏆 1.er Concurso Nacional</text>
+      <text x="484" y="119" font-family="Fira Mono,monospace" font-size="9" fill="#ffcccc" text-anchor="middle">Duetos de Tiple</text>
+      <text x="484" y="134" font-family="Fira Mono,monospace" font-size="9" fill="#ffcccc" text-anchor="middle">Vélez, Santander · 1984</text>
+      <text x="484" y="148" font-family="Fira Mono,monospace" font-size="8" fill="#ffcccc" text-anchor="middle">Mantilla (armónico) + Conde (melódico)</text>
+      <circle cx="484" cy="120" r="4" fill="#7a1f1f"/>
+      <!-- flechas al concurso -->
+      <line x1="363" y1="86" x2="396" y2="106" stroke="#9b6a2e" stroke-width="1.5" marker-end="url(#a1)"/>
+      <line x1="363" y1="170" x2="396" y2="148" stroke="#9b6a2e" stroke-width="1.5" marker-end="url(#a1)"/>
+      <!-- flecha concurso→autor -->
+      <line x1="572" y1="120" x2="598" y2="120" stroke="#9b6a2e" stroke-width="1.8" marker-end="url(#a1)"/>
+      <text x="585" y="113" font-family="Fira Mono,monospace" font-size="7.5" fill="#9b6a2e" text-anchor="middle">+20 años</text>
+      <!-- flechas directas Mantilla/Conde→autor -->
+      <path d="M 363 79 Q 480 18 596 100" stroke="#B7950B" stroke-width="1.2" fill="none" stroke-dasharray="4,3" marker-end="url(#a1)"/>
+      <path d="M 363 175 Q 480 215 596 145" stroke="#117A65" stroke-width="1.2" fill="none" stroke-dasharray="4,3" marker-end="url(#a1)"/>
+      <!-- NODO AUTOR -->
+      <rect x="602" y="65" width="150" height="108" rx="6" fill="#3d2b1a"/>
+      <text x="677" y="88" font-family="Lora,serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">L. A. Conde Solano</text>
+      <text x="677" y="104" font-family="Fira Mono,monospace" font-size="8.5" fill="#e8d4b0" text-anchor="middle">Dr. Matemática Educativa</text>
+      <text x="677" y="119" font-family="Fira Mono,monospace" font-size="8.5" fill="#e8d4b0" text-anchor="middle">Prof. Investigador · UCM</text>
+      <text x="677" y="134" font-family="Fira Mono,monospace" font-size="8.5" fill="#e8d4b0" text-anchor="middle">Tiplista experto</text>
+      <text x="677" y="149" font-family="Fira Mono,monospace" font-size="8" fill="#c8a870" text-anchor="middle">Herencia: aire de la</text>
+      <text x="677" y="162" font-family="Fira Mono,monospace" font-size="8" fill="#c8a870" text-anchor="middle">mano derecha</text>
+      <circle cx="677" cy="120" r="5" fill="#3d2b1a" stroke="#c8a870" stroke-width="2"/>
+    </svg>
+
+    <div style="font-size:12.5px;color:var(--ts);font-style:italic;margin-top:10px;text-align:center;">
+      Genealogía verificable en <em>Por los caminos del tiple</em> (pp. 157, 165) y registros del 1.er Concurso Nacional de Duetos de Tiple, Vélez, Santander, 1984.
+    </div>
+  </div>
+
+  <h3>El «aire de la mano derecha»: el rasgueo como portador de género</h3>
+  <p>En la escuela de Rodrigo Mantilla, la diferenciación entre aires rítmicos era una exigencia técnica y ética fundamental. La mano derecha construye el género; la mano izquierda construye la armonía. Los registros analizados son <strong>patrones rítmicos básicos sin variantes</strong>: las estructuras que se mantienen invariantes por encima del estilo individual. Las variaciones estilísticas son objeto de estudio independiente. Esto permite aislar la génesis rítmica tradicional andina colombiana.</p>
+
+  <div class="cita">
+    «Carlos J. Mancipe, dueño de un rasgueo de mano derecha que ya quisieran para sí muchos colegas.»
+    <span class="fe">— <em>Por los caminos del tiple</em>, p. 162</span>
+  </div>
+</div>
+
+<!-- §3 — LOS COLLARES + FIGURA 2 -->
+<div class="sec">
+  <h2><span class="ns">3.</span>El reloj de doce posiciones: los seis collares rítmicos</h2>
+
+  <p>Para construir el árbol de parentesco se utilizó el modelo de Toussaint (2013): cada ritmo se representa como un collar en un reloj circular de doce posiciones —el mínimo común múltiplo de las subdivisiones de 2 y de 3, los dos compases fundamentales de la música andina.</p>
+
+  <div class="fig">
+    <div class="ftit">Figura 2 — Los seis collares rítmicos: patrones básicos sin variantes</div>
+    <svg width="810" height="290" viewBox="0 0 810 290" xmlns="http://www.w3.org/2000/svg">
+      <rect width="810" height="290" fill="#f9f5ee"/>
+      <!-- Helper positions: n=12, radius=48, center at (cx,cy) -->
+      <!-- pos i: angle = -90 + i*30 degrees -->
+      <!-- px = cx + r*cos(angle), py = cy + r*sin(angle) -->
+      <!-- Precomputed for r=48: -->
+      <!-- 0: (0,-48), 1:(24,-41.6), 2:(41.6,-24), 3:(48,0), 4:(41.6,24), 5:(24,41.6) -->
+      <!-- 6:(0,48), 7:(-24,41.6), 8:(-41.6,24), 9:(-48,0), 10:(-41.6,-24), 11:(-24,-41.6) -->
+
+      <!-- ── BAMBUCO  cx=90,cy=120 ── -->
+      <circle cx="90" cy="120" r="48" fill="#fff" stroke="#e8dfc8" stroke-width="1.2"/>
+      <!-- pos 0 (fuerte) VACÍO = anacrusa -->
+      <circle cx="90" cy="72" r="6" fill="#fdf6e3" stroke="#b8860b" stroke-width="2"/>
+      <!-- pos 1 onset -->
+      <circle cx="114" cy="78.4" r="6.5" fill="#C0392B" stroke="white" stroke-width="1.2"/>
+      <!-- pos 2 onset -->
+      <circle cx="131.6" cy="96" r="6.5" fill="#C0392B" stroke="white" stroke-width="1.2"/>
+      <!-- pos 3 (fuerte) VACÍO -->
+      <circle cx="138" cy="120" r="5" fill="#fdf6e3" stroke="#b8860b" stroke-width="1.8"/>
+      <!-- pos 4 onset -->
+      <circle cx="131.6" cy="144" r="6.5" fill="#C0392B" stroke="white" stroke-width="1.2"/>
+      <!-- pos 5 onset -->
+      <circle cx="114" cy="161.6" r="6.5" fill="#C0392B" stroke="white" stroke-width="1.2"/>
+      <!-- pos 6 (fuerte) VACÍO -->
+      <circle cx="90" cy="168" r="5" fill="#fdf6e3" stroke="#b8860b" stroke-width="1.8"/>
+      <!-- pos 7 onset -->
+      <circle cx="66" cy="161.6" r="6.5" fill="#C0392B" stroke="white" stroke-width="1.2"/>
+      <!-- pos 8 silencio -->
+      <circle cx="48.4" cy="144" r="4.5" fill="#ddd"/>
+      <!-- pos 9 (fuerte) onset -->
+      <circle cx="42" cy="120" r="7" fill="#C0392B" stroke="#b8860b" stroke-width="2"/>
+      <!-- pos 10 onset -->
+      <circle cx="48.4" cy="96" r="6.5" fill="#C0392B" stroke="white" stroke-width="1.2"/>
+      <!-- pos 11 silencio -->
+      <circle cx="66" cy="78.4" r="4.5" fill="#ddd"/>
+      <!-- etiqueta v[0]=0 -->
+      <text x="90" cy="55" font-size="7.5" text-anchor="middle" fill="#7a1f1f" font-family="Fira Mono,monospace" y="58">v[0]=0</text>
+      <text x="90" y="215" font-family="Lora,serif" font-size="13" fill="#C0392B" text-anchor="middle" font-weight="bold">Bambuco</text>
+      <text x="90" y="228" font-family="Fira Mono,monospace" font-size="9" fill="#6b4c35" text-anchor="middle">k=7 · Syn=6 · 6/8+3/4</text>
+
+      <!-- ── PASILLO  cx=225,cy=120 ── -->
+      <circle cx="225" cy="120" r="48" fill="#fff" stroke="#e8dfc8" stroke-width="1.2"/>
+      <circle cx="225" cy="72" r="7" fill="#1A5276" stroke="#b8860b" stroke-width="2"/>
+      <circle cx="249" cy="78.4" r="4.5" fill="#ddd"/>
+      <circle cx="266.6" cy="96" r="6.5" fill="#1A5276" stroke="white" stroke-width="1.2"/>
+      <circle cx="273" cy="120" r="4.5" fill="#ddd" stroke="#b8860b" stroke-width="1.5"/>
+      <circle cx="266.6" cy="144" r="6.5" fill="#1A5276" stroke="white" stroke-width="1.2"/>
+      <circle cx="249" cy="161.6" r="4.5" fill="#ddd"/>
+      <circle cx="225" cy="168" r="7" fill="#1A5276" stroke="#b8860b" stroke-width="2"/>
+      <circle cx="201" cy="161.6" r="4.5" fill="#ddd"/>
+      <circle cx="183.4" cy="144" r="6.5" fill="#1A5276" stroke="white" stroke-width="1.2"/>
+      <circle cx="177" cy="120" r="4.5" fill="#ddd" stroke="#b8860b" stroke-width="1.5"/>
+      <circle cx="183.4" cy="96" r="6.5" fill="#1A5276" stroke="white" stroke-width="1.2"/>
+      <circle cx="201" cy="78.4" r="4.5" fill="#ddd"/>
+      <text x="225" y="215" font-family="Lora,serif" font-size="13" fill="#1A5276" text-anchor="middle" font-weight="bold">Pasillo</text>
+      <text x="225" y="228" font-family="Fira Mono,monospace" font-size="9" fill="#6b4c35" text-anchor="middle">k=6 · Syn=3 · 3/4</text>
+
+      <!-- ── DANZA  cx=360,cy=120 ── -->
+      <circle cx="360" cy="120" r="48" fill="#fff" stroke="#e8dfc8" stroke-width="1.2"/>
+      <circle cx="360" cy="72" r="8" fill="#1E8449" stroke="#b8860b" stroke-width="2.5"/>
+      <circle cx="384" cy="78.4" r="4" fill="#ddd"/>
+      <circle cx="401.6" cy="96" r="4" fill="#ddd"/>
+      <circle cx="408" cy="120" r="8" fill="#1E8449" stroke="#b8860b" stroke-width="2.5"/>
+      <circle cx="401.6" cy="144" r="4" fill="#ddd"/>
+      <circle cx="384" cy="161.6" r="4" fill="#ddd"/>
+      <circle cx="360" cy="168" r="8" fill="#1E8449" stroke="#b8860b" stroke-width="2.5"/>
+      <circle cx="336" cy="161.6" r="4" fill="#ddd"/>
+      <circle cx="318.4" cy="144" r="4" fill="#ddd"/>
+      <circle cx="312" cy="120" r="8" fill="#1E8449" stroke="#b8860b" stroke-width="2.5"/>
+      <circle cx="318.4" cy="96" r="4" fill="#ddd"/>
+      <circle cx="336" cy="78.4" r="4" fill="#ddd"/>
+      <text x="360" y="215" font-family="Lora,serif" font-size="13" fill="#1E8449" text-anchor="middle" font-weight="bold">Danza</text>
+      <text x="360" y="228" font-family="Fira Mono,monospace" font-size="9" fill="#6b4c35" text-anchor="middle">k=4 · Syn=0 · solo fuertes</text>
+
+      <!-- ── GUABINA  cx=495,cy=120 ── -->
+      <circle cx="495" cy="120" r="48" fill="#fff" stroke="#e8dfc8" stroke-width="1.2"/>
+      <circle cx="495" cy="72" r="7" fill="#6C3483" stroke="#b8860b" stroke-width="2"/>
+      <circle cx="519" cy="78.4" r="4.5" fill="#ddd"/>
+      <circle cx="536.6" cy="96" r="7" fill="#6C3483" stroke="white" stroke-width="1.2"/>
+      <circle cx="543" cy="120" r="7" fill="#6C3483" stroke="#b8860b" stroke-width="2"/>
+      <circle cx="536.6" cy="144" r="4.5" fill="#ddd"/>
+      <circle cx="519" cy="161.6" r="7" fill="#6C3483" stroke="white" stroke-width="1.2"/>
+      <circle cx="495" cy="168" r="7" fill="#6C3483" stroke="#b8860b" stroke-width="2"/>
+      <circle cx="471" cy="161.6" r="4.5" fill="#ddd"/>
+      <circle cx="453.4" cy="144" r="7" fill="#6C3483" stroke="white" stroke-width="1.2"/>
+      <circle cx="447" cy="120" r="7" fill="#6C3483" stroke="#b8860b" stroke-width="2"/>
+      <circle cx="453.4" cy="96" r="4.5" fill="#ddd"/>
+      <circle cx="471" cy="78.4" r="4.5" fill="#ddd"/>
+      <text x="495" y="215" font-family="Lora,serif" font-size="13" fill="#6C3483" text-anchor="middle" font-weight="bold">Guabina</text>
+      <text x="495" y="228" font-family="Fira Mono,monospace" font-size="9" fill="#6b4c35" text-anchor="middle">k=7 · Syn=4 · 3/4</text>
+
+      <!-- ── TORBELLINO  cx=630,cy=120 ── -->
+      <circle cx="630" cy="120" r="48" fill="#fff" stroke="#e8dfc8" stroke-width="1.2"/>
+      <circle cx="630" cy="72" r="7.5" fill="#B7950B" stroke="#b8860b" stroke-width="2"/>
+      <circle cx="654" cy="78.4" r="4" fill="#ddd"/>
+      <circle cx="671.6" cy="96" r="4" fill="#ddd"/>
+      <circle cx="678" cy="120" r="7.5" fill="#B7950B" stroke="#b8860b" stroke-width="2"/>
+      <circle cx="671.6" cy="144" r="4" fill="#ddd"/>
+      <circle cx="654" cy="161.6" r="4" fill="#ddd"/>
+      <circle cx="630" cy="168" r="7.5" fill="#B7950B" stroke="#b8860b" stroke-width="2"/>
+      <circle cx="606" cy="161.6" r="4" fill="#ddd"/>
+      <circle cx="588.4" cy="144" r="4" fill="#ddd"/>
+      <!-- pos 9: VACÍO = silencio estructural -->
+      <circle cx="582" cy="120" r="5" fill="#fdf6e3" stroke="#B7950B" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="566" y="124" font-family="Fira Mono,monospace" font-size="10" fill="#B7950B">∅</text>
+      <circle cx="588.4" cy="96" r="4" fill="#ddd"/>
+      <circle cx="606" cy="78.4" r="4" fill="#ddd"/>
+      <text x="630" y="215" font-family="Lora,serif" font-size="13" fill="#B7950B" text-anchor="middle" font-weight="bold">Torbellino</text>
+      <text x="630" y="228" font-family="Fira Mono,monospace" font-size="9" fill="#6b4c35" text-anchor="middle">k=3 · Syn=0 · silencio final (∅)</text>
+
+      <!-- LEYENDA -->
+      <rect x="10" y="260" width="790" height="26" fill="#f0e8d4" rx="3"/>
+      <circle cx="32" cy="273" r="6" fill="#3d2b1a" stroke="white" stroke-width="1"/>
+      <text x="43" y="277" font-family="Fira Mono,monospace" font-size="9" fill="#3d2b1a">Ataque</text>
+      <circle cx="105" cy="273" r="5.5" fill="#fdf6e3" stroke="#b8860b" stroke-width="1.8"/>
+      <text x="116" y="277" font-family="Fira Mono,monospace" font-size="9" fill="#3d2b1a">Tiempo fuerte vacío (dorado)</text>
+      <circle cx="305" cy="273" r="5" fill="#3d2b1a" stroke="#b8860b" stroke-width="2"/>
+      <text x="316" y="277" font-family="Fira Mono,monospace" font-size="9" fill="#3d2b1a">Ataque en tiempo fuerte</text>
+      <circle cx="475" cy="273" r="4.5" fill="#ddd"/>
+      <text x="486" y="277" font-family="Fira Mono,monospace" font-size="9" fill="#3d2b1a">Silencio</text>
+      <text x="560" y="277" font-family="Fira Mono,monospace" font-size="9" fill="#9b6a2e">∅ = silencio estructural especial</text>
+    </svg>
+    <div class="fcap">
+      Los seis collares de los géneros andinos. El <strong>Bambuco</strong> es el único con la posición 0 vacía (v[0]=0): inicio anacrúsico, el compás empieza «desde atrás». El <strong>Torbellino</strong> suprime el cuarto tiempo fuerte (∅). La <strong>Danza</strong> toca solo los cuatro tiempos fuertes —el patrón más limpio del corpus.
+    </div>
+  </div>
+</div>
+
+<!-- §4 — SESQUIÁLTERA + FIGURA 3 -->
+<div class="sec">
+  <h2><span class="ns">4.</span>La sesquiáltera del Bambuco: dos cuadrículas en un collar</h2>
+
+  <p>La sesquiáltera es la coexistencia simultánea de las cuadrículas de 6/8 y 3/4 en el mismo patrón rítmico. La figura siguiente muestra cómo los ataques del Bambuco se distribuyen sobre ambas cuadrículas al mismo tiempo.</p>
+
+  <div class="fig">
+    <div class="ftit">Figura 3 — Sesquiáltera del Bambuco: superposición de cuadrículas 3/4 y 6/8</div>
+    <svg width="780" height="250" viewBox="0 0 780 250" xmlns="http://www.w3.org/2000/svg">
+      <rect width="780" height="250" fill="#fdf6e3"/>
+      <!-- Fila 1: cuadrícula 3/4 -->
+      <text x="14" y="30" font-family="Lora,serif" font-size="13" fill="#1A5276" font-weight="bold">Cuadrícula 3/4</text>
+      <text x="14" y="44" font-family="Fira Mono,monospace" font-size="9.5" fill="#6b4c35">Pulsos fuertes: posiciones {0, 3, 6, 9}</text>
+      <g transform="translate(14,52)">
+        <line x1="0" y1="18" x2="752" y2="18" stroke="#1A5276" stroke-width="1.2"/>
+        <rect x="0" y="0" width="62" height="36" fill="#d0e8f8" rx="3"/>
+        <rect x="187" y="0" width="62" height="36" fill="#d0e8f8" rx="3"/>
+        <rect x="376" y="0" width="62" height="36" fill="#d0e8f8" rx="3"/>
+        <rect x="563" y="0" width="62" height="36" fill="#d0e8f8" rx="3"/>
+        <text x="31" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#1A5276" text-anchor="middle" font-weight="bold">0</text>
+        <text x="94" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">1</text>
+        <text x="157" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">2</text>
+        <text x="218" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#1A5276" text-anchor="middle" font-weight="bold">3</text>
+        <text x="281" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">4</text>
+        <text x="344" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">5</text>
+        <text x="407" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#1A5276" text-anchor="middle" font-weight="bold">6</text>
+        <text x="470" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">7</text>
+        <text x="533" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">8</text>
+        <text x="594" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#1A5276" text-anchor="middle" font-weight="bold">9</text>
+        <text x="657" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">10</text>
+        <text x="720" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">11</text>
+      </g>
+      <!-- Fila 2: cuadrícula 6/8 -->
+      <text x="14" y="115" font-family="Lora,serif" font-size="13" fill="#117A65" font-weight="bold">Cuadrícula 6/8</text>
+      <text x="14" y="129" font-family="Fira Mono,monospace" font-size="9.5" fill="#6b4c35">Pulsos fuertes: posiciones {0, 2, 4, 6, 8, 10}</text>
+      <g transform="translate(14,137)">
+        <line x1="0" y1="18" x2="752" y2="18" stroke="#117A65" stroke-width="1.2"/>
+        <rect x="0" y="0" width="62" height="36" fill="#c8e6d0" rx="3"/>
+        <rect x="125" y="0" width="62" height="36" fill="#c8e6d0" rx="3"/>
+        <rect x="250" y="0" width="62" height="36" fill="#c8e6d0" rx="3"/>
+        <rect x="376" y="0" width="62" height="36" fill="#c8e6d0" rx="3"/>
+        <rect x="501" y="0" width="62" height="36" fill="#c8e6d0" rx="3"/>
+        <rect x="627" y="0" width="62" height="36" fill="#c8e6d0" rx="3"/>
+        <text x="31" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#117A65" text-anchor="middle" font-weight="bold">0</text>
+        <text x="94" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">1</text>
+        <text x="156" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#117A65" text-anchor="middle" font-weight="bold">2</text>
+        <text x="218" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">3</text>
+        <text x="281" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#117A65" text-anchor="middle" font-weight="bold">4</text>
+        <text x="344" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">5</text>
+        <text x="407" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#117A65" text-anchor="middle" font-weight="bold">6</text>
+        <text x="470" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">7</text>
+        <text x="533" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#117A65" text-anchor="middle" font-weight="bold">8</text>
+        <text x="594" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">9</text>
+        <text x="657" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#117A65" text-anchor="middle" font-weight="bold">10</text>
+        <text x="720" y="23" font-family="Fira Mono,monospace" font-size="11.5" fill="#6b4c35" text-anchor="middle">11</text>
+      </g>
+      <!-- Fila 3: Bambuco -->
+      <text x="14" y="202" font-family="Lora,serif" font-size="13" fill="#C0392B" font-weight="bold">Bambuco sobre ambas cuadrículas</text>
+      <g transform="translate(14,210)">
+        <!-- pos 0 VACÍO anacrusa -->
+        <rect x="0" y="0" width="62" height="28" fill="none" stroke="#C0392B" stroke-width="1.5" stroke-dasharray="4,2" rx="2"/>
+        <text x="31" y="18" font-family="Fira Mono,monospace" font-size="13" fill="#C0392B" text-anchor="middle">∅</text>
+        <!-- pos 1: síncopa (rojo) -->
+        <rect x="63" y="0" width="62" height="28" fill="#ffcdd2" rx="2"/>
+        <text x="94" y="18" font-family="Fira Mono,monospace" font-size="14" fill="#C0392B" text-anchor="middle" font-weight="bold">●</text>
+        <!-- pos 2: 6/8 fuerte (verde) -->
+        <rect x="126" y="0" width="62" height="28" fill="#c8e6d0" rx="2"/>
+        <text x="157" y="18" font-family="Fira Mono,monospace" font-size="14" fill="#1E8449" text-anchor="middle" font-weight="bold">●</text>
+        <!-- pos 3: 3/4 fuerte VACÍO (azul) -->
+        <rect x="189" y="0" width="62" height="28" fill="#d0e8f8" stroke="#1A5276" stroke-width="1" rx="2"/>
+        <text x="220" y="18" font-family="Fira Mono,monospace" font-size="13" fill="#1A5276" text-anchor="middle">∅</text>
+        <!-- pos 4: 6/8 fuerte (verde) -->
+        <rect x="252" y="0" width="62" height="28" fill="#c8e6d0" rx="2"/>
+        <text x="283" y="18" font-family="Fira Mono,monospace" font-size="14" fill="#1E8449" text-anchor="middle" font-weight="bold">●</text>
+        <!-- pos 5: síncopa (rojo) -->
+        <rect x="315" y="0" width="62" height="28" fill="#ffcdd2" rx="2"/>
+        <text x="346" y="18" font-family="Fira Mono,monospace" font-size="14" fill="#C0392B" text-anchor="middle" font-weight="bold">●</text>
+        <!-- pos 6: ambas fuertes VACÍO (amarillo) -->
+        <rect x="378" y="0" width="62" height="28" fill="#fff9c4" stroke="#b8860b" stroke-width="1.5" rx="2"/>
+        <text x="409" y="18" font-family="Fira Mono,monospace" font-size="13" fill="#8b6014" text-anchor="middle">∅</text>
+        <!-- pos 7: síncopa (rojo) -->
+        <rect x="441" y="0" width="62" height="28" fill="#ffcdd2" rx="2"/>
+        <text x="472" y="18" font-family="Fira Mono,monospace" font-size="14" fill="#C0392B" text-anchor="middle" font-weight="bold">●</text>
+        <!-- pos 8: 6/8 fuerte VACÍO (verde) -->
+        <rect x="504" y="0" width="62" height="28" fill="#c8e6d0" stroke="#117A65" stroke-width="1" rx="2"/>
+        <text x="535" y="18" font-family="Fira Mono,monospace" font-size="13" fill="#117A65" text-anchor="middle">∅</text>
+        <!-- pos 9: 3/4 fuerte onset (azul) -->
+        <rect x="567" y="0" width="62" height="28" fill="#d0e8f8" rx="2"/>
+        <text x="598" y="18" font-family="Fira Mono,monospace" font-size="14" fill="#1A5276" text-anchor="middle" font-weight="bold">●</text>
+        <!-- pos 10: 6/8 fuerte onset (verde) -->
+        <rect x="630" y="0" width="62" height="28" fill="#c8e6d0" rx="2"/>
+        <text x="661" y="18" font-family="Fira Mono,monospace" font-size="14" fill="#1E8449" text-anchor="middle" font-weight="bold">●</text>
+        <!-- pos 11: silencio -->
+        <rect x="693" y="0" width="59" height="28" fill="#f5ede0" rx="2"/>
+        <text x="722" y="18" font-family="Fira Mono,monospace" font-size="13" fill="#aaa" text-anchor="middle">∅</text>
+      </g>
+    </svg>
+    <div class="fcap">
+      El Bambuco activa ataques (●) en posiciones que pertenecen a 6/8 (verde), a 3/4 (azul) o a ninguna (rojo=síncopa), mientras deja vacíos (∅) varios tiempos fuertes de ambas cuadrículas. La posición 0 —el primer tiempo fuerte de ambas métricas simultáneamente— llega vacía: ahí está el inicio anacrúsico que le da al Bambuco su impulso característico «de atrás hacia adelante».
+    </div>
+  </div>
+</div>
+
+<!-- §5 — ÁRBOL FILOGENÉTICO + FIGURA 4 -->
+<div class="sec">
+  <h2><span class="ns">5.</span>El árbol de parentesco: tres familias</h2>
+
+  <p>Para calcular el parentesco se midió la distancia entre collares: cuántas posiciones difieren entre dos géneros. El algoritmo UPGMA fusiona los más cercanos primero, generando el árbol de la figura siguiente.</p>
+
+  <div class="fig">
+    <div class="ftit">Figura 4 — Árbol filogenético UPGMA · Distancia de Hamming sobre ℤ₁₂</div>
+    <svg width="760" height="360" viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="ax" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+          <polygon points="0 0,8 3,0 6" fill="#6b4c35"/>
+        </marker>
+      </defs>
+      <rect width="760" height="360" fill="#fdf6e3"/>
+      <!-- Eje -->
+      <line x1="108" y1="336" x2="700" y2="336" stroke="#d4b896" stroke-width="1.5"/>
+      <!-- Ticks -->
+      <line x1="108" y1="332" x2="108" y2="340" stroke="#9b6a2e" stroke-width="1"/>
+      <text x="108" y="350" font-family="Fira Mono,monospace" font-size="9" fill="#9b6a2e" text-anchor="middle">0</text>
+      <line x1="192" y1="332" x2="192" y2="340" stroke="#9b6a2e" stroke-width="1"/>
+      <text x="192" y="350" font-family="Fira Mono,monospace" font-size="9" fill="#9b6a2e" text-anchor="middle">1</text>
+      <line x1="395" y1="332" x2="395" y2="340" stroke="#9b6a2e" stroke-width="1"/>
+      <text x="395" y="350" font-family="Fira Mono,monospace" font-size="9" fill="#9b6a2e" text-anchor="middle">3,5</text>
+      <line x1="508" y1="332" x2="508" y2="340" stroke="#9b6a2e" stroke-width="1"/>
+      <text x="508" y="350" font-family="Fira Mono,monospace" font-size="9" fill="#9b6a2e" text-anchor="middle">4,67</text>
+      <line x1="585" y1="332" x2="585" y2="340" stroke="#9b6a2e" stroke-width="1"/>
+      <text x="585" y="350" font-family="Fira Mono,monospace" font-size="9" fill="#9b6a2e" text-anchor="middle">5,5</text>
+      <line x1="700" y1="332" x2="700" y2="340" stroke="#C0392B" stroke-width="1.5"/>
+      <text x="700" y="350" font-family="Fira Mono,monospace" font-size="9" fill="#C0392B" text-anchor="middle" font-weight="bold">8,6</text>
+      <text x="405" y="362" font-family="Fira Mono,monospace" font-size="9" fill="#9b6a2e" text-anchor="middle">Distancia de Hamming →</text>
+      <!-- Líneas guía -->
+      <line x1="192" y1="18" x2="192" y2="336" stroke="#1E8449" stroke-width="0.7" stroke-dasharray="3,3" opacity="0.4"/>
+      <line x1="395" y1="18" x2="395" y2="336" stroke="#6C3483" stroke-width="0.7" stroke-dasharray="3,3" opacity="0.4"/>
+      <line x1="508" y1="18" x2="508" y2="336" stroke="#6b4c35" stroke-width="0.7" stroke-dasharray="3,3" opacity="0.3"/>
+      <line x1="585" y1="18" x2="585" y2="336" stroke="#6b4c35" stroke-width="0.7" stroke-dasharray="3,3" opacity="0.3"/>
+      <line x1="700" y1="18" x2="700" y2="336" stroke="#C0392B" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+
+      <!-- === RAMAS === -->
+      <!-- C1: Danza(y=70)+Torbellino(y=130) → x=192 -->
+      <line x1="108" y1="70" x2="192" y2="70" stroke="#1E8449" stroke-width="2.5"/>
+      <line x1="108" y1="130" x2="192" y2="130" stroke="#B7950B" stroke-width="2.5"/>
+      <line x1="192" y1="70" x2="192" y2="130" stroke="#1E8449" stroke-width="2"/>
+      <circle cx="192" cy="100" r="6" fill="white" stroke="#1E8449" stroke-width="2"/>
+      <text x="200" y="96" font-family="Fira Mono,monospace" font-size="8" fill="#1E8449">d=1</text>
+      <text x="118" y="40" font-family="Lora,serif" font-size="10" fill="#1E8449" font-weight="bold">FAMILIA I</text>
+      <text x="118" y="52" font-family="Fira Mono,monospace" font-size="8" fill="#1E8449">Ternario puro</text>
+      <!-- C2: Guabina(y=190)+C1(y=100) → x=395 -->
+      <line x1="108" y1="190" x2="395" y2="190" stroke="#6C3483" stroke-width="2.5"/>
+      <line x1="192" y1="100" x2="395" y2="100" stroke="#1E8449" stroke-width="2"/>
+      <line x1="395" y1="100" x2="395" y2="190" stroke="#6C3483" stroke-width="2"/>
+      <circle cx="395" cy="145" r="6" fill="white" stroke="#6C3483" stroke-width="2"/>
+      <text x="400" y="140" font-family="Fira Mono,monospace" font-size="8" fill="#6C3483">d=3,5</text>
+      <!-- C3: Rumba(y=240)+C2(y=145) → x=508 -->
+      <line x1="108" y1="240" x2="508" y2="240" stroke="#117A65" stroke-width="2.5"/>
+      <line x1="395" y1="145" x2="508" y2="145" stroke="#6C3483" stroke-width="2"/>
+      <line x1="508" y1="145" x2="508" y2="240" stroke="#117A65" stroke-width="2"/>
+      <circle cx="508" cy="192" r="6" fill="white" stroke="#117A65" stroke-width="2"/>
+      <text x="513" y="188" font-family="Fira Mono,monospace" font-size="8" fill="#117A65">d=4,67</text>
+      <!-- C4: Pasillo(y=290)+C3(y=192) → x=585 -->
+      <line x1="108" y1="290" x2="585" y2="290" stroke="#1A5276" stroke-width="2.5"/>
+      <line x1="508" y1="192" x2="585" y2="192" stroke="#117A65" stroke-width="2"/>
+      <line x1="585" y1="192" x2="585" y2="290" stroke="#1A5276" stroke-width="2"/>
+      <circle cx="585" cy="241" r="6" fill="white" stroke="#1A5276" stroke-width="2"/>
+      <text x="590" y="237" font-family="Fira Mono,monospace" font-size="8" fill="#1A5276">d=5,5</text>
+      <text x="200" y="202" font-family="Lora,serif" font-size="10" fill="#6C3483" font-weight="bold">FAMILIA II</text>
+      <text x="200" y="214" font-family="Fira Mono,monospace" font-size="8" fill="#6C3483">Polimetría controlada</text>
+      <!-- C5: Bambuco(y=320)+C4(y=241) → x=700 RAÍZ -->
+      <line x1="108" y1="320" x2="700" y2="320" stroke="#C0392B" stroke-width="3"/>
+      <line x1="585" y1="241" x2="700" y2="241" stroke="#6b4c35" stroke-width="2"/>
+      <line x1="700" y1="241" x2="700" y2="320" stroke="#C0392B" stroke-width="2.5"/>
+      <circle cx="700" cy="280" r="9" fill="#C0392B" stroke="white" stroke-width="2"/>
+      <text x="700" y="284" font-family="Fira Mono,monospace" font-size="8" fill="white" text-anchor="middle">8,6</text>
+
+      <!-- ETIQUETAS DE GÉNEROS -->
+      <rect x="4" y="54" width="100" height="32" fill="#1E8449" rx="5"/>
+      <text x="54" y="68" font-family="Lora,serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Danza</text>
+      <text x="54" y="81" font-family="Fira Mono,monospace" font-size="8" fill="#c8f0d8" text-anchor="middle">Syn=0 · k=4</text>
+      <rect x="4" y="114" width="100" height="32" fill="#B7950B" rx="5"/>
+      <text x="54" y="128" font-family="Lora,serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Torbellino</text>
+      <text x="54" y="141" font-family="Fira Mono,monospace" font-size="8" fill="#fff3cc" text-anchor="middle">Syn=0 · k=3</text>
+      <rect x="4" y="174" width="100" height="32" fill="#6C3483" rx="5"/>
+      <text x="54" y="188" font-family="Lora,serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Guabina</text>
+      <text x="54" y="201" font-family="Fira Mono,monospace" font-size="8" fill="#d8b8f0" text-anchor="middle">Syn=4 · k=7</text>
+      <rect x="4" y="224" width="100" height="32" fill="#117A65" rx="5"/>
+      <text x="54" y="238" font-family="Lora,serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Rumba Criolla</text>
+      <text x="54" y="251" font-family="Fira Mono,monospace" font-size="8" fill="#a8e8d8" text-anchor="middle">Syn=4 · k=8</text>
+      <rect x="4" y="274" width="100" height="32" fill="#1A5276" rx="5"/>
+      <text x="54" y="288" font-family="Lora,serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Pasillo</text>
+      <text x="54" y="301" font-family="Fira Mono,monospace" font-size="8" fill="#a8c8e8" text-anchor="middle">Syn=3 · k=6</text>
+      <rect x="4" y="304" width="100" height="34" fill="#C0392B" rx="5" stroke="#7a1f1f" stroke-width="1.5"/>
+      <text x="54" y="320" font-family="Lora,serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Bambuco</text>
+      <text x="54" y="333" font-family="Fira Mono,monospace" font-size="8" fill="#ffcccc" text-anchor="middle">Syn=6 · único</text>
+
+      <!-- FAMILIA III -->
+      <rect x="706" y="292" width="50" height="42" fill="#C0392B" rx="4" opacity="0.9"/>
+      <text x="731" y="309" font-family="Lora,serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">FAM.</text>
+      <text x="731" y="322" font-family="Lora,serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">III</text>
+      <text x="731" y="331" font-family="Fira Mono,monospace" font-size="7" fill="#ffcccc" text-anchor="middle">Bimétrico</text>
+      <!-- Anotación 8,6 -->
+      <text x="634" y="326" font-family="Fira Mono,monospace" font-size="8.5" fill="#C0392B" text-anchor="middle" font-weight="bold">← 8,6 pasos al resto →</text>
+    </svg>
+    <div class="fcap">
+      El árbol UPGMA de los géneros andinos. La distancia horizontal indica el número de pasos de diferencia. El <strong>Bambuco</strong> se funde al árbol al final —a 8,6 pasos, la mayor distancia del corpus. El gradiente de síncopa (Syn: 0 → 0 → 4 → 4 → 3 → 6) sigue la dirección del árbol de izquierda a derecha, confirmando la coherencia interna del modelo.
+    </div>
+  </div>
+
+  <div class="hall">
+    <div class="eh">Lo que el árbol confirma</div>
+    La geometría confirma la máxima oral con precisión matemática: <strong>el Bambuco está a 8,6 pasos del Pasillo</strong> —más lejos que cualquier otro par de géneros. No puede apasillarse porque sus estructuras métricas de base son fundamentalmente distintas. Rodrigo Mantilla lo sabía en su mano derecha. El árbol lo muestra en números.
+  </div>
+</div>
+
+<!-- §6 — PERFIL + FIGURA 5 -->
+<div class="sec">
+  <h2><span class="ns">6.</span>Perfil de cada familia: lo que las une y lo que las separa</h2>
+
+  <!-- FIGURA 5 — BARRAS HORIZONTALES -->
+  <div class="fig">
+    <div class="ftit">Figura 5 — Perfil rítmico comparado: síncopa, densidad y regularidad</div>
+    <svg width="760" height="218" viewBox="0 0 760 218" xmlns="http://www.w3.org/2000/svg">
+      <rect width="760" height="218" fill="#fdf6e3"/>
+      <!-- Columnas: Syn/6, k/8, E*max -->
+      <!-- Cabeceras -->
+      <text x="60" y="18" font-family="Fira Mono,monospace" font-size="9" fill="#3d2b1a" text-anchor="start" font-weight="bold">Género</text>
+      <text x="175" y="18" font-family="Fira Mono,monospace" font-size="9" fill="#9b6a2e" text-anchor="middle">← Síncopa (Syn) →</text>
+      <text x="390" y="18" font-family="Fira Mono,monospace" font-size="9" fill="#9b6a2e" text-anchor="middle">← Densidad (k/8) →</text>
+      <text x="594" y="18" font-family="Fira Mono,monospace" font-size="9" fill="#9b6a2e" text-anchor="middle">← Regularidad (E) →</text>
+
+      <!-- Fondo barras -->
+      <rect x="115" y="24" width="215" height="180" fill="#f0e8d4" rx="2"/>
+      <rect x="338" y="24" width="215" height="180" fill="#f0e8d4" rx="2"/>
+      <rect x="561" y="24" width="175" height="180" fill="#f0e8d4" rx="2"/>
+
+      <!-- BAMBUCO -->
+      <text x="110" y="44" font-family="Lora,serif" font-size="12.5" fill="#C0392B" text-anchor="end" font-weight="bold">Bambuco</text>
+      <!-- Syn=6/6=100% -->
+      <rect x="116" y="32" width="213" height="20" fill="#C0392B" rx="2" opacity="0.85"/>
+      <text x="332" y="46" font-family="Fira Mono,monospace" font-size="8.5" fill="white" text-anchor="end">6</text>
+      <!-- k=7/8=87.5% -->
+      <rect x="339" y="32" width="188" height="20" fill="#C0392B" rx="2" opacity="0.85"/>
+      <text x="530" y="46" font-family="Fira Mono,monospace" font-size="8.5" fill="white" text-anchor="end">7/8</text>
+      <!-- E=0.592=59.2% -->
+      <rect x="562" y="32" width="103" height="20" fill="#C0392B" rx="2" opacity="0.85"/>
+      <text x="668" y="46" font-family="Fira Mono,monospace" font-size="8.5" fill="#6b4c35" text-anchor="start"> 0,59</text>
+
+      <!-- PASILLO -->
+      <text x="110" y="74" font-family="Lora,serif" font-size="12.5" fill="#1A5276" text-anchor="end" font-weight="bold">Pasillo</text>
+      <rect x="116" y="62" width="107" height="20" fill="#1A5276" rx="2" opacity="0.85"/>
+      <text x="226" y="76" font-family="Fira Mono,monospace" font-size="8.5" fill="white" text-anchor="end">3</text>
+      <rect x="339" y="62" width="161" height="20" fill="#1A5276" rx="2" opacity="0.85"/>
+      <text x="503" y="76" font-family="Fira Mono,monospace" font-size="8.5" fill="white" text-anchor="end">6/8</text>
+      <rect x="562" y="62" width="175" height="20" fill="#1A5276" rx="2" opacity="0.85"/>
+      <text x="740" y="76" font-family="Fira Mono,monospace" font-size="8.5" fill="white" text-anchor="end">1,00</text>
+
+      <!-- DANZA -->
+      <text x="110" y="104" font-family="Lora,serif" font-size="12.5" fill="#1E8449" text-anchor="end" font-weight="bold">Danza</text>
+      <rect x="116" y="92" width="2" height="20" fill="#1E8449" rx="1" opacity="0.4"/>
+      <text x="125" y="106" font-family="Fira Mono,monospace" font-size="8.5" fill="#6b4c35" text-anchor="start">0</text>
+      <rect x="339" y="92" width="107" height="20" fill="#1E8449" rx="2" opacity="0.85"/>
+      <text x="449" y="106" font-family="Fira Mono,monospace" font-size="8.5" fill="white" text-anchor="end">4/8</text>
+      <rect x="562" y="92" width="175" height="20" fill="#1E8449" rx="2" opacity="0.85"/>
+      <text x="740" y="106" font-family="Fira Mono,monospace" font-size="8.5" fill="white" text-anchor="end">1,00</text>
+
+      <!-- GUABINA -->
+      <text x="110" y="134" font-family="Lora,serif" font-size="12.5" fill="#6C3483" text-anchor="end" font-weight="bold">Guabina</text>
+      <rect x="116" y="122" width="143" height="20" fill="#6C3483" rx="2" opacity="0.85"/>
+      <text x="262" y="136" font-family="Fira Mono,monospace" font-size="8.5" fill="white" text-anchor="end">4</text>
+      <rect x="339" y="122" width="188" height="20" fill="#6C3483" rx="2" opacity="0.85"/>
+      <text x="530" y="136" font-family="Fira Mono,monospace" font-size="8.5" fill="white" text-anchor="end">7/8</text>
+      <rect x="562" y="122" width="103" height="20" fill="#6C3483" rx="2" opacity="0.85"/>
+      <text x="668" y="136" font-family="Fira Mono,monospace" font-size="8.5" fill="#6b4c35" text-anchor="start"> 0,59</text>
+
+      <!-- TORBELLINO -->
+      <text x="110" y="164" font-family="Lora,serif" font-size="12.5" fill="#B7950B" text-anchor="end" font-weight="bold">Torbellino</text>
+      <rect x="116" y="152" width="2" height="20" fill="#B7950B" rx="1" opacity="0.4"/>
+      <text x="125" y="166" font-family="Fira Mono,monospace" font-size="8.5" fill="#6b4c35" text-anchor="start">0</text>
+      <rect x="339" y="152" width="80" height="20" fill="#B7950B" rx="2" opacity="0.85"/>
+      <text x="422" y="166" font-family="Fira Mono,monospace" font-size="8.5" fill="white" text-anchor="end">3/8</text>
+      <rect x="562" y="152" width="113" height="20" fill="#B7950B" rx="2" opacity="0.85"/>
+      <text x="678" y="166" font-family="Fira Mono,monospace" font-size="8.5" fill="#6b4c35" text-anchor="start"> 0,65</text>
+
+      <!-- RUMBA -->
+      <text x="110" y="194" font-family="Lora,serif" font-size="12.5" fill="#117A65" text-anchor="end" font-weight="bold">Rumba C.</text>
+      <rect x="116" y="182" width="143" height="20" fill="#117A65" rx="2" opacity="0.85"/>
+      <text x="262" y="196" font-family="Fira Mono,monospace" font-size="8.5" fill="white" text-anchor="end">4</text>
+      <rect x="339" y="182" width="215" height="20" fill="#117A65" rx="2" opacity="0.85"/>
+      <text x="557" y="196" font-family="Fira Mono,monospace" font-size="8.5" fill="white" text-anchor="end">8/8</text>
+      <rect x="562" y="182" width="116" height="20" fill="#117A65" rx="2" opacity="0.85"/>
+      <text x="681" y="196" font-family="Fira Mono,monospace" font-size="8.5" fill="#6b4c35" text-anchor="start"> 0,67</text>
+
+      <!-- Líneas separadoras familia -->
+      <line x1="60" y1="55" x2="760" y2="55" stroke="#1E8449" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
+      <line x1="60" y1="115" x2="760" y2="115" stroke="#6C3483" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
+      <line x1="60" y1="175" x2="760" y2="175" stroke="#6b4c35" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
+      <!-- Etiquetas familia derecha -->
+      <text x="755" y="46" font-family="Fira Mono,monospace" font-size="8" fill="#C0392B" text-anchor="end" font-weight="bold">FAM. III</text>
+      <text x="755" y="102" font-family="Fira Mono,monospace" font-size="8" fill="#1A5276" text-anchor="end">FAM. II</text>
+      <text x="755" y="132" font-family="Fira Mono,monospace" font-size="8" fill="#6C3483" text-anchor="end">FAM. II</text>
+      <text x="755" y="162" font-family="Fira Mono,monospace" font-size="8" fill="#1E8449" text-anchor="end">FAM. I</text>
+      <text x="755" y="192" font-family="Fira Mono,monospace" font-size="8" fill="#117A65" text-anchor="end">FAM. II</text>
+    </svg>
+    <div class="fcap">
+      La síncopa (Syn) discrimina claramente: Danza y Torbellino (Syn=0, Familia I) no tienen síncopa; Guabina, Pasillo y Rumba (Syn=3–4, Familia II) tienen síncopa controlada; el Bambuco (Syn=6, Familia III) alcanza el máximo. La regularidad (E=1) del Pasillo y la Danza refleja que sus IOI son todos iguales —los únicos géneros perfectamente isorítmicos.
+    </div>
+  </div>
+
+  <div class="cl" style="color:var(--dan);border-color:var(--dan);">
+    <div class="cl-cab" style="background:var(--dan);">Familia I · Ternario puro · Syn=0 · Danza y Torbellino · d=1 entre sí</div>
+    <div class="cl-bod">
+      <div class="mf">Hermanos que difieren en un único ataque.</div>
+      <p>La Danza: cuatro ataques en tiempos fuertes, sin síncopa. El Torbellino: tres ataques con un silencio en el cuarto tiempo. En la tradición oral, ambos compartían el mismo tipo de rasgueo de barrida. La geometría confirma: los separa solo 1 paso —la fusión más pequeña del árbol.</p>
+      <div class="tip" style="border-color:var(--dan);">💡 <strong>Enseñanza:</strong> Comenzar con la Danza (el patrón más limpio); luego el Torbellino enseña el silencio como decisión activa.</div>
+    </div>
+  </div>
+
+  <div class="cl" style="color:var(--gua);border-color:var(--gua);">
+    <div class="cl-cab" style="background:var(--gua);">Familia II · Polimetría controlada · Syn=3–4 · Guabina, Pasillo, Rumba · d=3–6</div>
+    <div class="cl-bod">
+      <div class="mf">Tres primos que comparten el territorio de la síncopa controlada.</div>
+      <p>La Guabina introduce la primera síncopa sistemática (grupos de tres ataques que anticipan el tiempo fuerte). El Pasillo la estabiliza en alternancia regular. La Rumba Criolla tiende el puente al compás binario sin llegar a la hemiolia del Bambuco.</p>
+      <div class="tip" style="border-color:var(--gua);">💡 <strong>Enseñanza:</strong> Secuencia natural: Danza → Guabina → Pasillo → Rumba.</div>
+    </div>
+  </div>
+
+  <div class="cl" style="color:var(--bam);border-color:var(--bam);">
+    <div class="cl-cab" style="background:var(--bam);">Familia III · Bimétrico único · Syn=6 · Bambuco · 8,6 pasos al corpus</div>
+    <div class="cl-bod">
+      <div class="mf">El Bambuco habla el mismo idioma andino, pero con un acento que ningún otro género tiene.</div>
+      <p>Tres propiedades únicas: (1) inicio anacrúsico (v[0]=0), (2) sin intervalos de 3 pulsos en sus IOI, (3) máxima síncopa del corpus (Syn=6). La suma es la sesquiáltera vivida desde adentro. Por eso no puede apasillarse: la diferencia no es de estilo, es de arquitectura.</p>
+      <div class="tip" style="border-color:var(--bam);">💡 <strong>Enseñanza:</strong> Solo abordar después de interiorizar dos pulsos simultáneos. El árbol lo confirma: es el género terminal del itinerario.</div>
+    </div>
+  </div>
+</div>
+
+<!-- §7 — ITINERARIO + FIGURA 6 -->
+<div class="sec">
+  <h2><span class="ns">7.</span>El árbol como itinerario pedagógico</h2>
+
+  <div class="fig">
+    <div class="ftit">Figura 6 — Itinerario de aprendizaje derivado del árbol filogenético</div>
+    <svg width="760" height="182" viewBox="0 0 760 182" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="fw" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+          <polygon points="0 0,9 3.5,0 7" fill="#3d2b1a"/>
+        </marker>
+      </defs>
+      <rect width="760" height="182" fill="#fdf6e3"/>
+      <line x1="10" y1="98" x2="750" y2="98" stroke="#d4b896" stroke-width="1.5" stroke-dasharray="4,4"/>
+      <!-- Etapas -->
+      <!-- 1 Danza -->
+      <rect x="8" y="55" width="102" height="86" rx="7" fill="#1E8449"/>
+      <text x="59" y="79" font-family="Lora,serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Danza</text>
+      <text x="59" y="95" font-family="Fira Mono,monospace" font-size="8.5" fill="#c8f0d8" text-anchor="middle">Iniciación</text>
+      <text x="59" y="108" font-family="Fira Mono,monospace" font-size="8" fill="#c8f0d8" text-anchor="middle">Pulso puro</text>
+      <text x="59" y="121" font-family="Fira Mono,monospace" font-size="8" fill="#c8f0d8" text-anchor="middle">Syn=0</text>
+      <line x1="113" y1="98" x2="130" y2="98" stroke="#3d2b1a" stroke-width="2" marker-end="url(#fw)"/>
+      <!-- 2 Torbellino -->
+      <rect x="134" y="55" width="102" height="86" rx="7" fill="#B7950B"/>
+      <text x="185" y="79" font-family="Lora,serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Torbellino</text>
+      <text x="185" y="95" font-family="Fira Mono,monospace" font-size="8.5" fill="#fff3cc" text-anchor="middle">Básico</text>
+      <text x="185" y="108" font-family="Fira Mono,monospace" font-size="8" fill="#fff3cc" text-anchor="middle">El silencio</text>
+      <text x="185" y="121" font-family="Fira Mono,monospace" font-size="8" fill="#fff3cc" text-anchor="middle">Syn=0</text>
+      <line x1="239" y1="98" x2="256" y2="98" stroke="#3d2b1a" stroke-width="2" marker-end="url(#fw)"/>
+      <!-- 3 Guabina -->
+      <rect x="260" y="55" width="102" height="86" rx="7" fill="#6C3483"/>
+      <text x="311" y="79" font-family="Lora,serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Guabina</text>
+      <text x="311" y="95" font-family="Fira Mono,monospace" font-size="8.5" fill="#d8b8f0" text-anchor="middle">Interm. I</text>
+      <text x="311" y="108" font-family="Fira Mono,monospace" font-size="8" fill="#d8b8f0" text-anchor="middle">1ª síncopa</text>
+      <text x="311" y="121" font-family="Fira Mono,monospace" font-size="8" fill="#d8b8f0" text-anchor="middle">Syn=4</text>
+      <line x1="365" y1="98" x2="382" y2="98" stroke="#3d2b1a" stroke-width="2" marker-end="url(#fw)"/>
+      <!-- 4 Pasillo -->
+      <rect x="386" y="55" width="102" height="86" rx="7" fill="#1A5276"/>
+      <text x="437" y="79" font-family="Lora,serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Pasillo</text>
+      <text x="437" y="95" font-family="Fira Mono,monospace" font-size="8.5" fill="#a8c8e8" text-anchor="middle">Interm. II</text>
+      <text x="437" y="108" font-family="Fira Mono,monospace" font-size="8" fill="#a8c8e8" text-anchor="middle">Alternancia</text>
+      <text x="437" y="121" font-family="Fira Mono,monospace" font-size="8" fill="#a8c8e8" text-anchor="middle">Syn=3</text>
+      <line x1="491" y1="98" x2="508" y2="98" stroke="#3d2b1a" stroke-width="2" marker-end="url(#fw)"/>
+      <!-- 5 Rumba -->
+      <rect x="512" y="55" width="102" height="86" rx="7" fill="#117A65"/>
+      <text x="563" y="79" font-family="Lora,serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Rumba C.</text>
+      <text x="563" y="95" font-family="Fira Mono,monospace" font-size="8.5" fill="#a8e8d8" text-anchor="middle">Interm. III</text>
+      <text x="563" y="108" font-family="Fira Mono,monospace" font-size="8" fill="#a8e8d8" text-anchor="middle">2/4 sincop.</text>
+      <text x="563" y="121" font-family="Fira Mono,monospace" font-size="8" fill="#a8e8d8" text-anchor="middle">Syn=4</text>
+      <line x1="617" y1="98" x2="632" y2="98" stroke="#C0392B" stroke-width="2.5" marker-end="url(#fw)"/>
+      <!-- 6 Bambuco -->
+      <rect x="636" y="50" width="115" height="96" rx="7" fill="#C0392B" stroke="#7a1f1f" stroke-width="1.5"/>
+      <text x="693" y="77" font-family="Lora,serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Bambuco</text>
+      <text x="693" y="93" font-family="Fira Mono,monospace" font-size="8.5" fill="#ffcccc" text-anchor="middle">Avanzado</text>
+      <text x="693" y="106" font-family="Fira Mono,monospace" font-size="8" fill="#ffcccc" text-anchor="middle">Sesquiáltera</text>
+      <text x="693" y="119" font-family="Fira Mono,monospace" font-size="8" fill="#ffcccc" text-anchor="middle">Syn=6</text>
+      <text x="693" y="132" font-family="Fira Mono,monospace" font-size="7.5" fill="#f0c060" text-anchor="middle">d=8,6 al resto</text>
+      <!-- Distancias -->
+      <text x="121" y="160" font-family="Fira Mono,monospace" font-size="8.5" fill="#9b6a2e" text-anchor="middle">d=1</text>
+      <text x="247" y="160" font-family="Fira Mono,monospace" font-size="8.5" fill="#9b6a2e" text-anchor="middle">d=3,5</text>
+      <text x="373" y="160" font-family="Fira Mono,monospace" font-size="8.5" fill="#9b6a2e" text-anchor="middle">d=4,67</text>
+      <text x="499" y="160" font-family="Fira Mono,monospace" font-size="8.5" fill="#9b6a2e" text-anchor="middle">d=5,5</text>
+      <text x="624" y="160" font-family="Fira Mono,monospace" font-size="8.5" fill="#C0392B" text-anchor="middle" font-weight="bold">d=8,6</text>
+      <line x1="113" y1="152" x2="134" y2="152" stroke="#9b6a2e" stroke-width="1"/>
+      <line x1="239" y1="152" x2="260" y2="152" stroke="#9b6a2e" stroke-width="1"/>
+      <line x1="365" y1="152" x2="386" y2="152" stroke="#9b6a2e" stroke-width="1"/>
+      <line x1="491" y1="152" x2="512" y2="152" stroke="#9b6a2e" stroke-width="1"/>
+      <line x1="617" y1="152" x2="636" y2="152" stroke="#C0392B" stroke-width="1.5"/>
+      <text x="380" y="178" font-family="Lora,serif" font-size="9.5" fill="#6b4c35" text-anchor="middle" font-style="italic">«La tradición oral transmitía el Bambuco al final, cuando el estudiante ya tenía los otros géneros en el cuerpo.»</text>
+    </svg>
+    <div class="fcap">
+      Las distancias entre etapas adyacentes (d=1, 3,5, 4,67, 5,5) marcan la «altura» del salto métrico que el estudiante da en cada paso. El salto final al Bambuco (d=8,6) es el mayor de todos. La tradición oral de la escuela Mantilla-Conde enseñaba el Bambuco al final por exactamente esta razón.
+    </div>
+  </div>
+
+  <table class="tp">
+    <thead>
+      <tr><th>Nivel</th><th>Género</th><th>Qué aprende en el Tiple</th><th>Por qué aquí (el árbol)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Iniciación</td><td class="gd">Danza</td><td>Rasgueo que marcha con el pulso ternario puro. Cuatro ataques en tiempos fuertes.</td><td>Syn=0, E=1: el patrón más regular. Punto de referencia axiomático del corpus.</td></tr>
+      <tr><td>Básico</td><td class="gt">Torbellino</td><td>El silencio en el cuarto tiempo como decisión activa, no como pausa.</td><td>A solo d=1 de la Danza: el primer salto del árbol, el más pequeño.</td></tr>
+      <tr><td>Interm. I</td><td class="gg">Guabina</td><td>Grupos de tres ataques consecutivos que anticipan el tiempo fuerte.</td><td>Syn=4: primer nivel de síncopa. El árbol la coloca a d=3,5 del núcleo.</td></tr>
+      <tr><td>Interm. II</td><td class="gp">Pasillo</td><td>Alternancia perfecta de tiempos fuertes y débiles. El rasgueo más regular de la Fam. II.</td><td>Syn=3, E=1: consolida antes del salto final.</td></tr>
+      <tr><td>Interm. III</td><td class="gr">Rumba Criolla</td><td>El compás binario desde el rasgueo. Puente entre lo ternario y lo bimétrico.</td><td>Único en 2/4. Última estación antes del Bambuco.</td></tr>
+      <tr><td>Avanzado</td><td class="gb">Bambuco</td><td>El «aire» que une 6/8 y 3/4 simultáneamente. Inicio anacrúsico.</td><td>Syn=6, d=8,6: métricamente único. Solo cuando el estudiante mantiene dos pulsos simultáneos.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §8 CONCLUSIÓN -->
+<div class="sec">
+  <h2><span class="ns">8.</span>Conclusión: lo que el aire de la mano derecha enseña</h2>
+
+  <p>El árbol de parentesco que emerge de este estudio es el mapa del conocimiento que Rodrigo Mantilla transmitía en su rasgueo armónico, que Carlos Conde expresaba en su punteo melódico, y que el autor ha recibido y formalizado durante más de veinte años. Ese conocimiento no estaba en ninguna partitura. Estaba en el aire de la mano derecha.</p>
+
+  <p><strong>Primero:</strong> la Danza y el Torbellino son hermanos (d=1). Quien aprende el rasgueo de uno tiene ya la base del otro.</p>
+  <p><strong>Segundo:</strong> la Guabina, el Pasillo y la Rumba Criolla son primos (d=3–6). Aprender el aire de uno facilita el de los otros dos.</p>
+  <p><strong>Tercero:</strong> el Bambuco es único (d=8,6). No puede apasillarse porque su estructura métrica de base es fundamentalmente diferente a la de todos los demás géneros del corpus. La geometría lo confirma con la misma precisión que lo sabe la mano derecha del tiplista.</p>
+</div>
+
+<!-- REFERENCIAS -->
+<div class="sec">
+  <h2><span class="ns">Ref.</span>Referencias</h2>
+  <div class="refs">
+    <p>Cano, E., Mora-Ángel, F., López Gil, G. A., Zapata, J. R., Escamilla, A., Alzate, J. F., y Betancur, M. (2021). Sesquialtera in the Colombian bambuco: Perception and estimation of beat and meter. <em>Transactions of the International Society for Music Information Retrieval</em>, 4(1), 248–262.</p>
+    <p>D'Alemán, T. (1877). <em>Nuevo sistema para aprender fácilmente los tonos en el tiple</em>. Bogotá. Citado en: <em>Por los caminos del tiple</em>, p. 128.</p>
+    <p>Davidson. (s.f.). Citado en: <em>Por los caminos del tiple</em> (2.ª ed., p. 179). Biblioteca Luis Ángel Arango, Banco de la República.</p>
+    <p>Franco Duque, L. (2004). <em>Músicas andinas occidentales: Entre pasillos y bambucos</em>. Ministerio de Cultura de Colombia.</p>
+    <p><em>Por los caminos del tiple</em> (2.ª ed.). Biblioteca Luis Ángel Arango, Banco de la República. [Rodrigo Mantilla, p. 157; Carlos Conde, p. 165; C. J. Mancipe, p. 162; Davidson, p. 179.]</p>
+    <p>Toussaint, G. T. (2013). <em>The Geometry of Musical Rhythm</em> (2.ª ed., 2019). CRC Press.</p>
+  </div>
+</div>
+
+<div class="pie">
+  <p><span class="np">[1]</span> Las seis figuras SVG del presente artículo son de elaboración propia. El código fuente completo está en: <strong>github.com/acordesolano/adn-ritmico-andino</strong></p>
+  <p><span class="np">[2]</span> La versión científica completa (para TISMIR / Revista Musical Chilena) está disponible como documento separado del mismo autor: <em>Análisis filogenético y representación geométrica de los ritmos andinos colombianos</em> (Conde Solano, 2025).</p>
+</div>
+
+</div>
+</body>
+</html>
